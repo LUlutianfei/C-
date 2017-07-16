@@ -6026,3 +6026,111 @@ int main()
 		}
 	}
 }
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+class Employee//一般员工
+{
+	string number;
+	string name;
+	double basicSalary;//基本工资
+public:
+	Employee(){}
+	Employee(char *a,char *b,double c)
+	{
+		number=a;
+		name=b;
+		basicSalary=c;
+	}
+	void input()
+	{
+		cin>>number;
+		cin>>name;
+		cin>>basicSalary;
+	}
+	double pay()
+	{
+		return basicSalary;
+	}
+	void print()
+	{
+		cout<<"一般员工月薪:";
+		cout<<pay()<<endl;
+	}
+};
+class Salesman:public Employee //销售员工
+{
+	double sales;//销售额
+	static double commrate;//提成率
+public:
+	Salesman(){}
+	Salesman(char *a,char *b,double c,double d):Employee(a,b,c)
+	{
+		sales=d;
+	}
+	void input()
+	{
+		Employee::input();
+		cin>>sales;
+	}
+	double pay()
+	{
+		return Employee::pay()+sales*commrate;
+	}
+	void print()
+	{
+		cout<<"销售员工月薪:";
+		cout<<pay()<<endl;
+	}
+};
+double Salesman::commrate=0.005;
+class Salesmanager:public Salesman//销售经理
+{
+	double jobSalary;//岗位工资
+public:
+	Salesmanager(){}
+	Salesmanager(char *a,char *b,double c,double d,double e):Salesman(a,b,c,d)
+	{
+		jobSalary=e;
+	}
+	void input()
+	{
+		Salesman::input();
+		cin>>jobSalary;
+	}
+	double pay()
+	{
+		return Salesman::pay()+jobSalary;
+	}
+	void print()
+	{
+		cout<<"销售经理月薪:";
+		cout<<pay()<<endl;
+	}
+};
+int main()
+{
+	Employee a("123","123",2000);
+	a.print();
+	Salesman b("456","456",2000,8000);
+	b.print();
+	Salesmanager c("789","789",2000,6800,3000);
+	c.print();
+	char *i,*j;
+	double k,l,m;
+	Employee a1;
+	Salesman b1;
+	Salesmanager c1;
+	cout<<"请输入编号，姓名，基本工资。"<<endl;
+	a1.input();
+	cout<<"请输入编号，姓名，基本工资，销售额。"<<endl;
+	b1.input();
+	cout<<"请输入编号，姓名，基本工资，销售额，岗位工资。"<<endl;
+	c1.input();
+	a1.print();
+	b1.print();
+	c1.print();
+}
