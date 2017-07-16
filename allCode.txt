@@ -1,0 +1,6028 @@
+保留有效数字
+#include<iomanip>
+#include<iostream>
+using namespace std;
+int main()
+{   double a,b,c,d,e,f,g,h,i,j,k;
+    cin>>a>>b>>c>>d>>e>>f>>g>>h>>i>>j;
+	k=(a+b+c+d+e+f+g+h+i+j)/10;
+    cout<<fixed<<setprecision(2)<<k;
+}
+
+
+
+比较a,b大小并相减
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,c;
+    cin>>a>>b;
+	if(a>b)
+		{c=a-b;
+		cout<<a<<"-"<<b<<"="<<c<<endl;}
+	else
+	    {if(a<b)
+		  {c=b-a;
+	       cout<<b<<"-"<<a<<"="<<c<<endl;}
+		 else
+			 cout<<a<<"="<<b<<endl;}
+	}
+
+	   
+计算速度
+#include<iostream>
+using namespace std;
+int main()
+{   cout<<"输入开始时间（时，分，秒格式）\n";
+	int begins,beginf,beginm,startx;
+	cin>>begins>>beginf>>beginm;
+	cout<<"输入行驶距离\n";
+	cin>>startx;
+	cout<<"输入停止时间\n";
+	int stops,stopf,stopm;
+	cin>>stops>>stopf>>stopm;
+	double second=(stops*3600+stopf*60+stopm)-(begins*3600+beginf*60+beginm);
+    double hour=second/3600;
+
+	cout<<hour;
+	cout<<"时速"<<":"<<startx/hour;
+
+}
+
+
+判断闰年
+#include<iostream>
+using namespace std;
+int main()
+{  int a;
+   cin>>a;
+   if(a%4==0%%a%100!=0||a%400==0)
+         cout<<"YES";
+   else
+         cout<<"NO";
+}
+
+
+
+将一个五位以下的数各个位数的数字拆解出来
+#include<iostream>
+using namespace std;
+int main()
+{   int a,b,x,i;
+    i=0;
+    cin>>x;
+    a=x;
+    b=x;
+    while(a>0)
+    {a=a/10;	 i=i+1;}
+	cout<<i<<endl;
+	switch(i)
+       {case 5 : cout<<x/10000<<" "; 
+        case 4 : x=x%10000;
+			      cout<<x/1000<<" "; 
+        case 3 : x=x%1000;
+			      cout<<x/100<<" ";
+        case 2 : x=x%100;
+			      cout<<x/10<<" ";
+        case 1 : x=x%10;
+			      cout<<x<<endl;}
+	switch(i)
+       {case 5 : cout<<b%10;
+	              b=(b-(b%10))/10;
+        case 4 : cout<<b%10;
+	              b=(b-(b%10))/10;
+        case 3 : cout<<b%10;	
+	          b=(b-(b%10))/10; 
+	case 2 : cout<<b%10;	
+		      b=(b-(b%10))/10;
+        case 1 :  cout<<b;}
+}
+
+
+求一组数中偶数的和
+#include <iostream>
+using namespace std;
+int main()
+{   int x,n,i,a;
+    cin>>n;
+	i=1;
+	a=0;
+	while(i<=n)
+		{cin>>x;
+	    i=i+1;
+		{if(x%2)	 
+	     a=a+0;	 
+		else
+			a=a+x;}}
+		cout<<a;   
+}
+
+
+求循环后a的值
+#include <iostream>
+using namespace std;
+int main()
+{ 
+	int n,i=1,a=1;
+	cin>>n;
+	while(i<n)
+		{a=(1+a)*2;   
+	     i++;}
+	cout<<a;
+}
+
+
+算法，结果保留两位小数
+#include <iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{ 
+	int n,i=1,b;
+	double m,a=0.0;
+	cin>>m>>n;
+	b=m;
+	while(i<=n)	
+	   {m=m/2;
+	    a=a+m;
+	    i++;}
+	cout<<fixed<<setprecision(2)<<m<<" "<<fixed<<setprecision(2)<<a*2+b-2*m;
+}
+
+
+
+
+判断一串字符中字母 数字 空格……的个数
+#include <iostream>
+using namespace std;
+int main()
+{  char x;
+   int a=0,b=0,c=0,d=0;
+   while((x=cin.get())!='\n')
+	  {if(x>='A'&&x<='Z'||x>='a'&&x<='z')
+		   a++;
+	   else if(x>='0'&&x<='9')
+		   b++;
+	   else if(x==' ')
+		   c++;
+	   else
+		   d++;}
+	   cout<<a<<" "<<b<<" "<<c<<" "<<d;
+
+}
+或
+#include <iostream>
+#include<string>
+using namespace std;
+int main()
+{  string x;
+   int a=0,b=0,c=0,d=0;
+   getline(cin,x);
+   for(int i=0;i<x.size();i++)
+	  {if(x[i]>='A'&&x[i]<='Z'||x[i]>='a'&&x[i]<='z')
+		   a++;
+	   else if(x[i]>='0'&&x[i]<='9')
+		   b++;
+	   else if(x[i]==' ')
+		   c++;
+	   else
+		   d++;}
+	   cout<<a<<" "<<b<<" "<<c<<" "<<d;
+
+}
+
+
+
+
+
+
+求圆 圆柱的体积 表面积
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+
+{   
+	double r,h,C1,Sa,Sb,Va,Vb;
+	const double p=3.14;
+    cin>>r>>h;
+	cout<<"C1"<<"="<<fixed<<setprecision(2)<<2*p*r<<endl;
+	cout<<"Sa"<<"="<<fixed<<setprecision(2)<<p*r*r<<endl;
+	cout<<"Sb"<<"="<<fixed<<setprecision(2)<<4*p*r*r<<endl;
+	cout<<"Va"<<"="<<fixed<<setprecision(2)<<((double)4/3)*p*r*r*r<<endl;
+	cout<<"Vb"<<"="<<fixed<<setprecision(2)<<p*r*r*h<<endl;
+
+}
+
+
+
+求1+2+3……与1*1+2*2……与1/1+1/2……的和
+#include <iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{ 
+   int a,b,c,d=0,e=0,i=1;
+   double f=0.0;
+   cin>>a>>b>>c;
+   {while(i<=a)
+     { d=d+i;
+       i++;}
+   }
+  { i=1;
+   while(i<=b)
+	   {e=e+i*i;
+       i++;}
+  }
+   {i=1;
+    while(i<=c)
+		{f=f+1.0/i;
+	     i++;}
+   }
+   cout<<fixed<<setprecision(2)<<d+e+f;
+}
+
+
+
+牛顿迭代法
+#include <iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main()
+{ 
+	double x0,x1,a,n=1.0;
+	cin>>a;
+	x0=a/2.0;
+	
+	while(n>=0.00001)
+		
+	   {x1=1.0/2*(x0+a/x0);
+	   n=fabs(x0-x1);
+	   x0=x1;}
+	cout<<fixed<<setprecision(3)<<x0;
+}
+
+
+亲密数
+#include <iostream>
+using namespace std;
+int main()
+{ 
+	int n=100,a,b,c;
+	
+	while(n<1000)
+		{a=n/100;
+	    b=(n-a*100)/10;
+	    c=n-a*100-b*10;
+		if(n==a*a*a+b*b*b+c*c*c)
+		   cout<<n<<endl;
+	       n++;}
+}
+
+
+
+
+求算式的值
+#include <iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{ 
+	int N,i=1,c;
+	double x=0.0,a=2.0,b=1.0;
+	cin>>N;
+	
+	while(i<=N)
+	   {x=x+a/b; 
+		c=b;
+	    b=a;
+		a=a+c;
+	    i++;}
+		cout<<fixed<<setprecision(2)<<x;
+
+}
+
+
+
+
+求素数
+#include <iostream>
+#include<cmath>
+using namespace std;
+int main()
+{ 
+	int m=1,i,x,n;
+	cin>>n;
+	while(m<n)
+	{	m++;
+	x=int(sqrt(double(m)));
+	i=2;
+	while(m%i&&i<=x)
+		i++;
+	 if(i>x)
+	cout<<m<<endl;
+	 }
+
+}
+
+
+
+
+求1000以内能被2 3 7 整除的数
+#include <iostream>                          
+using namespace std;
+int main()
+{ 
+	int n=10;
+	while(n<1000)
+		{n++;
+		if(n%2==0&&n%3==0&&n%7==0)
+			cout<<n<<endl;}
+}
+或
+#include <iostream>
+using namespace std;
+int main()
+{ 
+	int n;
+	for(n=10;n<1000;n++)
+		{if(n%2==0&&n%3==0&&n%7==0)
+			cout<<n<<endl;}
+}
+
+
+
+求最大公约数和最小公倍数
+#include <iostream>
+using namespace std;
+int main()
+{ 
+	int m,n,r,a,b,c;
+	cin>>m>>n;
+	if(m>n)
+		{a=m;
+	     b=n;}
+	else
+		{a=n;
+	     b=m;}
+	r=b;
+	while(r)
+		{r=a%b;
+	     a=b;
+		 b=r;}
+	cout<<a<<endl;
+	cout<<m*n/a;
+}
+
+
+
+
+求算式的值
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a=1;
+	while(a<=20)
+		{if(a!=3&&a!=8&&a!=13&&a!=18)
+		cout<<2*a-1<<"/"<<40<<",";
+	     a++;}
+}
+
+
+
+
+谁去问题
+#include<iostream>
+using namespace std;
+int main()
+{	int a,b,c,d,e,f,i;
+	for(a=0;a<=1;a++)
+	  for(b=0;b<=1;b++)
+        for(c=0;c<=1;c++)
+          for(d=0;d<=1;d++)
+           for(e=0;e<=1;e++)
+			for(f=0;f<=1;f++)
+	if(a+b>=1&&a+d!=2&&a+e+f==2&&(b+c==2||b+c==0)&&c+d==1&&(d+e==0||d==1))
+		{if(a)
+			cout<<"A,";
+	    if(b)
+			cout<<"B,";
+		if(c)
+			cout<<"C,";
+	    if(d!=0)
+			cout<<"D,";
+		if(e!=0)
+			cout<<"E,";
+	    if(f!=0)
+			cout<<"F,";}
+		
+		
+}
+
+
+
+
+
+打印1到n之内的数
+#include <iostream> 
+using namespace std;   
+int main() 
+{
+	int i=1,x,a=0,b=1,n;
+	cin>>n;
+	for(i=1;i<=n;i++)
+		{a=a+b;
+	    x=b;
+	    b=a;
+		a=x;
+		cout<<a<<" ";
+	    }
+}
+
+
+
+
+判断数的符合条件
+#include <iostream>  
+#include<cmath>
+using namespace std;    
+int main()  
+{  
+  double a,b;
+  int i=1000;
+  while(i<10000)
+	 { a=i/100;
+      b=i%100;  
+  if(pow((a+b),2)==i)
+	  cout<<i<<" ";
+        i++;}
+  
+}   
+
+
+
+
+
+计算a+aa+aaa+……的值
+#include<iostream> 
+using namespace std;  
+int main()  
+{  
+   int x=0,b=0,a,n,i=0; 
+   cin>>a>>n; 
+   if(n>=1&&a<=9) 
+   while(i<n) 
+     { x=10*x+a; 
+       b=x+b; 
+       i++;} 
+   cout<<b; 
+}    
+
+
+
+
+
+计算1！+2！+++++的值
+#include<iostream>
+using namespace std;
+int main()
+{
+	long int n,i=1,a=1,b=0,c=0;
+	cin>>n;
+	while(i<=n)
+		{a=a*i;
+	b=b+a;
+	
+	i++;}
+	cout<<b;
+}
+
+
+
+
+
+计算算式的值
+#include <iostream>  
+#include<cmath>
+using namespace std;    
+int main()  
+{  
+  int x,i=1,y=0;
+  cin>>x;
+  if(x==1)
+	  cout<<10;
+  if(x>1)
+
+	{ while(i<x) 
+		{ y=y+2;
+        i++;}
+    cout<<y+10;}
+  
+}   
+
+
+
+
+
+求一组数的最大值 最小值 和
+#include<iostream>
+using namespace std;
+int main()
+{	int a,b=0,max,min,n,i=1;
+    cin>>n;
+	cin>>a;
+	max=a;
+	min=a;
+	b=a;
+    while(i<n)
+		{cin>>a;
+		 b=b+a;
+	  if(max<a)
+		  max=a;
+	  if(min>a)
+		  min=a;
+	  i++;}
+	cout<<max<<" "<<min<<" "<<b;
+}  
+
+
+
+
+
+计算一组数中偶数和
+#include<iostream>
+using namespace std;
+int main()
+{	int a,b=0,n,i=1;
+    cin>>n;
+	while(i<=n)
+		{cin>>a;
+	if(a%2!=0)
+		b=b+a;
+	    i++;}
+	   cout<<b;
+}  
+
+
+
+
+
+计算方程的值
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{	
+	double a=0.5,b,c=1,n;
+	cin>>n;
+	while(abs(a-c)>n)
+		{c=a;
+		b=exp(-a);
+		a=b;}
+	cout<<a;
+	
+}  
+
+ 
+
+               
+
+
+求2到a之间的素数
+#include <iostream>  
+#include<cmath>
+using namespace std;    
+int main()  
+{  
+ int m,i,k,n=0,a;
+ cin>>a;
+ for(m=2;m<=a;m++)
+ {k=int(sqrt(double(m)));
+  i=2;
+  while(m%i&&i<=k)
+      i++;
+  if(i>k)
+  cout<<m<<" ";
+ }
+}   
+ 
+
+
+
+
+求方程的解
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{	
+	double a=1.5,b,c=1,n;
+	cin>>n;
+	while(abs(a-c)>n)
+		{b=a-(2.0*a*a*a-4.0*a*a+3.0*a-6.0)/(6.0*a*a-8.0*a+3.0);
+	     c=a;
+	     a=b;}
+	cout<<b;
+} 
+
+
+
+
+
+
+产生随机数
+#include<iostream>
+using namespace std;
+int main()
+{	
+	int a,b=0,n,i;
+	cin>>n;
+	for(i=1;i<=n;i++)
+		{a=(25173*b+13849)%65536;
+		cout<<a<<endl;
+		b=a;}
+}  
+
+
+
+
+
+排序
+#include <iostream>  
+using namespace std;   
+int main()  
+{  
+   int a[1000],i,j,b,c,n;
+   cin>>n;
+   for(i=0;i<=n-1;i++)  
+    cin>>a[i];  
+   for(i=0;i<=n-2;i++)  
+   {  
+       c=i;  
+       for(j=i+1;j<=n-1;j++)  
+       if(a[c]>a[j])  
+       {  
+           b=a[c];a[c]=a[j];a[j]=b;  
+       }  
+   }  
+   for(i=0;i<=n-1;i++)  
+   {  
+       cout<<a[i]<<" ";  
+  }  
+   return 0;  
+}  
+
+
+
+
+
+
+成绩转换
+#include<iostream>
+using namespace std;
+int main()
+{
+	int t;
+	while(cin>>t)
+    {if(t<=100&&t>=90)
+			cout<<"A"<<endl;
+	 else if(t<=89&&t>=80)
+			cout<<"B"<<endl;
+	 else if(t<=79&&t>=70)
+			cout<<"C"<<endl;
+	 else if(t<=69&&t>=60)
+			cout<<"D"<<endl;
+     else if(t<=59&&t>=0)
+			cout<<"E"<<endl;
+      else
+		  cout<<"Score is error!"<<endl;}
+}
+
+
+
+
+输出一个范围内所有偶数的平方和与所有奇数的立方和
+#include<iostream>
+using namespace std;
+int main()
+{
+	int t,a,b,i,x;
+	while(cin>>a>>b)
+		 {   t=0;
+	        x=0;
+	      for(i=a;i<=b;i++)
+			{if(i%2==0)
+		        x=x+i*i; 
+		    else
+				t=i*i*i+t;}
+	      cout<<x<<" ";
+		  cout<<t<<endl;
+	
+	}
+}
+
+
+
+
+
+
+
+
+对于大于等于100的整数, 仅保留该数的最后两位进行计算, 如果计算结果大于等于100, 那么也仅保留计算结果的最后两位
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t,a,b,i;
+    cin>>t;
+    for(i=1;i<=t;i++)
+        {cin>>a>>b;
+    if(a>=0&&b>=0)
+       {a=a%100;
+        b=b%100;}
+       cout<<(a+b)%100<<endl;}
+}
+ 
+
+
+
+
+
+输入两个整数，求他们相除的余数。函数来实现。 
+#include<iostream>
+using namespace std;
+int lu(int,int);
+int main()
+{
+	int a,b;
+	cin>>a>>b;
+	cout<<lu(a,b);
+}
+
+int lu(int x,int y)
+{ 
+	x=x-(x/y)*y;
+		return x;
+}
+
+
+
+求三角形面积
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	double a,b,c,s,x;
+	cin>>a>>b>>c;
+	s=(a+b+c)/2.0;
+	x=sqrt(s*(s-a)*(s-b)*(s-c));
+	cout<<fixed<<setprecision(3)<<x;
+}
+
+
+
+
+
+
+两种方式比较三个数大小
+#include<iostream>
+#include<iomanip>
+using namespace std;
+double lu(double,double,double);
+int main()
+{
+	double a,b,c,max;
+	cin>>a>>b>>c;
+	if(a>b)
+		max=a;
+	else
+		max=b;
+	if(max>c)
+		cout<<fixed<<setprecision(3)<<max;
+	else
+		cout<<fixed<<setprecision(3)<<c;
+	cout<<endl<<fixed<<setprecision(3)<<lu(a,b,c);
+}
+
+double lu(double x,double y, double z)
+{
+	if(x>y)
+		y=x;
+	
+	if(y>z)
+		return y;
+	else
+		return z;
+}
+
+
+
+
+输入m,n(M>=n>=0)后,计算下列表达式的值并输出：
+m!/(n!*(m-n)!)
+#include<iostream>
+using namespace std;
+int fact(int x);
+int main()
+{
+	int m,n;
+	cin>>m>>n;
+	cout<<fact(m)/(fact(n)*fact(m-n));
+}
+   
+int fact(int x)
+{float i,n=1;
+	for(i=1;i<=x;i++)
+		n=n*i;
+	return n;
+}
+
+
+
+
+
+
+
+
+输入10个数，求它们的平均值，并输出大于平均值的数据的个数。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n=0,i,x[10],a,b=0;
+	for(i=0;i<10;i++)
+	cin>>x[i];
+	for(i=0;i<10;i++)
+		n=n+x[i];
+	    a=n/10;
+	for(i=0;i<10;i++)
+		if(a<x[i])
+			b++;
+	cout<<b;
+}
+
+
+
+
+输入一个正整数n.求1+1/2!+1/3!+....+1/n!
+要求定义并调用函数fact(n)计算n的阶乘，函数返回值的类型是点单精度浮点型。
+输出保留4位小数
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int fact(int);
+int main()
+{
+	double i,a=0.0;
+	int n;
+	cin>>n;
+	for(i=1;i<=n;i++)
+		a=a+1.0/fact(i);
+	cout<<fixed<<setprecision(4)<<a;
+
+}
+
+
+int fact(int x)
+{float i,n=1;
+	for(i=1;i<=x;i++)
+		n=n*i;
+	return n;
+}
+
+
+
+
+
+已知：Sn= 1＋1／2＋1／3＋…＋1／n。显然对于任意一个整数K，当n足够大的时候，Sn大于K。现给出一个整数K（1<=k<=15），要求计算出一个最小的n；使得Sn＞K。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int k,i;
+	double s=0.0;
+	cin>>k;
+	for(i=1;;i++)
+      { s=s+1.0/i;
+	if(s>k)
+	{cout<<i;break;}}
+} 
+
+
+
+
+某班学生参加程序设计大赛，最后结果及格有超过P%但不足Q%的人。现在给你P和Q，你要算出该班最少有多少人。
+#include<iostream>  
+using namespace std;    
+int main()  
+{  
+    double p,q,n,a,b[100000];
+    int i;
+    while(cin>>p>>q)
+        {i=0;
+         if(p>=0.00&&p<q&&q<=99.99)
+            {
+                for(n=1;n<=1000;n++)
+             {
+                   for(a=1;a<=1000;a++)
+                {
+                     if(n*(p/100.0)<a&&a<n*(q/100.0))
+                   { 
+                       b[i]=n;
+                       i++;
+                   }
+                }
+              } 
+                cout<<b[0]<<endl;
+             }
+          }
+           
+}
+
+
+
+
+
+
+一个整数，只知道前几位，不知道末二位，被另一个整数除尽了，那么该数的末二位该是什么呢
+输入数据有若干组，每组数据包含二个整数a，b（0＜a＜10000, 10＜b＜100），若遇到0 0则处理结束
+对应每组数据，将满足条件的所有尾数在一行内输出，格式见样本输出。同组数据的输出，其每个尾数之间空一格，行末没有空格。
+#include<iostream>     
+using namespace std;    
+int main()  
+{  
+    int a=1,b=1,c,d[10000],i=0,j;
+    while(cin>>a>>b)
+    {
+       if(a==0&&b==0)break;
+       else
+       {if(a>0&&a<10000&&b>0&&b<100)
+         {  i=0;
+            for(c=0;c<100;c++)   
+            if((a*100+c)%b==0)
+              {
+                d[i]=c;
+                i++;
+            }
+          }
+          for(j=0;j<i;j++)
+           {
+            if(d[j]<10&&d[j]>=0)
+            cout<<"0"<<d[j];
+            else
+            cout<<d[j];
+            if(j!=i-1)
+            cout<<" ";
+           }
+     }
+    cout<<endl;}
+}
+
+
+
+
+
+输入一个正整数，检查该数是否为质数
+#include<iostream>  
+#include<cmath>
+using namespace std;    
+int main()  
+{  
+    int n,m,i,j;
+    cin>>n;
+    m=int(sqrt(double(n)));
+    for(i=2;i<=m;i++)
+        if(n%i==0)break;
+      if(i>m)
+            cout<<"Y";
+        else
+           cout<<"N";
+}
+
+
+
+
+
+有一堆正整数，统计其中有多少立方数。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a=1,i,b=0;
+	while(a!=0)
+		{cin>>a;
+	 for(i=1;i<=a;i++)
+		 if(i*i*i==a)
+			 b=b+1;}
+	  cout<<b;
+}
+
+
+
+
+
+设有一头小母牛，从出生第四年起每年生一头小母牛，按此规律，第N年时有几头母牛？
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,i,s[50];
+	s[0]=0;
+	s[1]=1;
+	s[2]=1;
+    s[3]=1;
+	cin>>n;
+	if(n<=3)
+		cout<<"1";   
+	else
+	{for(i=4;i<=n;i++)
+		s[i]=s[i-1]+s[i-3];
+	cout<<s[n];}
+} 
+
+
+
+
+
+输入20个整数，输出其中能被数组中其它元素整除的那些数组元素。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[20],i,j;
+	for(i=0;i<20;i++)
+		cin>>a[i];
+	for(i=0;i<20;i++)
+		for(j=0;j<20;j++)
+			if(j!=i)
+				if(a[i]%a[j]==0)
+                   { cout<<a[i]<<endl;
+	                    break;}
+} 
+
+
+
+
+输入若干个整数,以-1标记输入结束。输出其中的最大数
+#include <iostream>  
+using namespace std;    
+int main()  
+{  
+   int n=0,max;
+   cin>>n;
+   max=n;
+   while(n!=-1)
+	{   
+      if(max<n)
+	   max=n;
+      cin>>n;
+   }
+   cout<<max<<endl;
+
+} 
+
+
+
+
+
+Fans是个ACM程序设计迷。有时侯，他表现出很强烈的逆反心理，你往东，他往西，你往南，他偏往北。这一次，不知道又是谁惹着他了，好端端的一个个01串，到了他的手里，都变成10串了。请你编个程序来模仿他的行为，将01串（长度≤200），全变成10串吧。
+#include <iostream>
+#include<string>
+#include<cstring>
+using namespace std;    
+int main() 
+{
+	int i;
+	string a;
+	while(cin>>a)
+	{for(i=0;i<a.length();i++)
+	{if(a[i]=='1')
+	   cout<<'0';
+	else
+	cout<<'1';
+	}
+	cout<<endl;}
+}
+
+
+
+
+
+给定一个日期，输出这个日期是该年的第几天。
+输入数据有多组，每组占一行，数据格式为YYYY/MM/DD组成。
+对于每组输入数据，输出一行，表示该日期是该年的第几天。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,c,s;
+	char x,n;
+	while(cin>>a>>x>>b>>n>>c)
+	{
+		switch(b)
+		{ 
+		  case 12 : s=c; 
+	      case 11 : if(b==11) s=c; else s=s+30;
+		  case 10 : if(b==10) s=c; else s=s+31;
+          case 9 : if(b==9) s=c; else s=s+30;
+	      case 8 : if(b==8) s=c; else s=s+31;
+		  case 7 : if(b==7) s=c; else s=s+31;
+		  case 6 : if(b==6) s=c; else s=s+30;
+		  case 5 : if(b==5) s=c; else s=s+31;
+		  case 4 : if(b==4) s=c; else s=s+30;
+		  case 3 : if(b==3) s=c; else s=s+31;
+		  case 2 : if(b==2) s=c; 
+				   else 
+					   {if(a%4==0&&a%100!=0||a%400==0)
+						   s=s+29;
+					   else
+						   s=s+28;}
+		   case 1 :if(b==1) s=c; else s=s+31;
+	}
+	cout<<s<<endl;
+	}
+}	 
+
+
+
+
+
+
+
+输入数据包含多个测试实例，每个测试实例的输入只包含一个正整数n（1＜=n＜=30），表示将要输出的杨辉三角的层数。
+对应于每一个输入，请输出相应层数的杨辉三角，每一层的整数之间用一个空格隔开，每一个杨辉三角后面加一个空行。
+#include<iostream>
+using namespace std;
+int main()
+{  int n,i,j,a[100][100];
+while(cin>>n)
+ {
+  for(i=0;i<n;i++)
+    for(j=0;j<n;j++)
+  {
+    a[i][0]=1;
+    if(j>0&&j<i)
+    a[i][j]=a[i-1][j-1]+a[i-1][j];
+    else if(i==j)
+    a[i][j]=1;
+	}
+ for(i=0;i<n;i++) 
+  for(j=0;j<=i;j++)
+  {
+   cout<<a[i][j]<<" ";
+   if(i==j)
+    cout<<'\n';
+  }
+  cout<<endl;
+}
+}
+
+
+
+
+已有一个已排好的9个元素的数组，今输入一个数要求按原来排序的规律将它插入数组中。
+#include<iostream>
+using namespace std;
+int main()
+{  
+	int a[9],i,j,n;
+	for(i=0;i<9;i++)
+		cin>>a[i];
+	cin>>n;
+	for(i=0;i<9;i++)
+		if(n>a[i]&&n<a[i+1])
+			cout<<a[i]<<endl<<n<<endl;
+		else
+			cout<<a[i]<<endl;		
+}
+
+
+
+
+
+
+输入
+3*3矩阵
+输出
+主对角线副对角线元素和
+#include<iostream>
+using namespace std;
+int main()
+{  
+    int a[3][3],i,j;
+    for(i=0;i<3;i++)
+        for(j=0;j<3;j++)
+            cin>>a[i][j];
+    cout<<a[0][0]+a[1][1]+a[2][2]<<" ";
+    cout<<a[0][2]+a[1][1]+a[2][0]<<endl;
+}
+
+
+
+
+
+
+写一个函数，使给定的一个二维数组（３×３）转置，即行列互换。
+输入
+一个3x3的矩阵
+输出
+转置后的矩阵
+样例输入
+1 2 3
+4 5 6
+7 8 9
+样例输出
+1 4 7 
+2 5 8 
+3 6 9 
+
+#include<iostream>
+using namespace std;
+int main()
+{  
+    int a[3][3],i,j,n;
+    for(i=0;i<3;i++)
+        for(j=0;j<3;j++)
+            cin>>a[i][j];
+    n=a[0][1];
+	a[0][1]=a[1][0];
+	a[1][0]=n;
+	n=a[0][2];
+	a[0][2]=a[2][0];
+	a[2][0]=n;
+	n=a[1][2];
+	a[1][2]=a[2][1];
+	a[2][1]=n;
+	for(i=0;i<3;i++)
+       { for(j=0;j<3;j++)
+		{cout<<a[i][j]<<" ";
+	     if(j==2)
+			 cout<<endl;}}
+}
+
+
+
+
+将两个字符串连接
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{  
+   string a;
+   string b;
+   cin>>a;
+   cin>>b;
+   a=a+b;
+   cout<<a;
+}
+
+
+
+
+
+
+一个数如果恰好等于它的因子之和，这个数就称为"完数"。 例如，6的因子为1、2、3，而6=1+2+3，因此6是"完数"。 编程序找出N之内的所有完数。
+样例输出
+6 its factors are 1 2 3 
+28 its factors are 1 2 4 7 14 
+496 its factors are 1 2 4 8 16 31 62 124 248 
+
+#include<iostream>
+using namespace std;
+int main()
+{  
+	int n,i,j,k,l,a[100],b=0;
+    cin>>n;
+    for(i=1;i<=n;i++)
+     {  
+	  b=0;
+          k=0;
+	   for(j=1;j<=i;j++)
+	    {  
+		  if(i%j==0&&i!=j)
+		   {
+			b=b+j;
+                        a[k]=j;
+			k++;
+		   }
+	    }
+	  if(b==i)
+	   {
+	    cout<<i<<" its factors are ";
+		for(l=0;l<k;l++)
+		   cout<<a[l]<<" ";
+		   cout<<endl;
+	   } 
+    }
+}
+
+
+
+请设计输出实数的格式，包括：⑴一行输出一个实数；⑵一行内输出两个实数；⑶一行内输出三个实数。实数用"6.2f"格式输出。
+输入：一个实数，float范围
+样例输入
+0.618
+样例输出
+  0.62
+  0.62   0.62
+  0.62   0.62   0.62
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{  
+	double n;
+	int i,j;
+	cin>>n;
+	for(i=1;i<=3;i++)
+		for(j=1;j<=i;j++)
+			{if(j==2||j==3)
+			  cout<<" ";
+			  cout<<"  "<<fixed<<setprecision(2)<<n;
+			  if(j==i)
+				  cout<<endl;
+	      
+	                }
+}
+
+
+
+
+
+
+输入三个字符串，按由小到大的顺序输出 
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+int main()
+{  
+	string a,b,c,d;
+    cin>>a>>b>>c;
+	if(a>b)
+		{d=a;
+	    a=b;
+		b=d;}
+	if(a>c)
+	   {d=a;
+	    a=c;
+		c=d;}
+	if(b>c)
+		{d=b;
+	    b=c;
+		c=d;}
+	
+	cout<<a<<endl<<b<<endl<<c<<endl;
+
+	
+}
+
+
+
+
+已知三位整数x和y满足x+y=1333，其中x的个位数是y的百位数，y的个位数是x的百位数，它们的十位数一样。求满足这样条件的x和y。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x,y,i,j;
+	for(x=100;x<1000;x++)
+		for(y=100;y<1000;y++)
+			if(x%10==y/100&&y%10==x/100&&(x-x/100*100)/10==(y-y/100*100)/10&&x+y==1333)
+				cout<<x<<"+"<<y<<"=1333"<<endl;
+
+}
+
+
+
+
+
+有4个互不相同的数字，输出由其中三个不重复数字组成的排列。
+#include<iostream>
+using namespace std;
+int main()
+{  
+	int i,j,k,a[10];
+	for(i=0;i<4;i++)
+		cin>>a[i];
+	for(i=0;i<4;i++)
+		for(j=0;j<4;j++)
+			for(k=0;k<4;k++)
+				if(a[i]!=a[j]&&a[j]!=a[k]&&a[i]!=a[k])
+					cout<<a[i]<<" "<<a[j]<<" "<<a[k]<<endl;
+}
+
+
+
+
+
+
+
+给定很多行数据,要求输出每一行的最大值.
+程序有多行输入,每一行以0结束. 
+#include <iostream> 
+using namespace std;
+int main()
+{
+	int i,n,max;
+	while(1)
+	{
+	cin>>n;
+	max=n;
+	if(n==0)
+		break;
+	while(n!=0)
+		{if(n>max)
+			max=n;
+	cin>>n;}
+	cout<<max<<endl;
+	}
+}
+
+
+
+
+
+
+已知一个圆的半径,求面积.
+输入有多行,第一行是一个整数n(对应总行数),以下每一行只有一个浮点数(对应一个圆的半径).
+输出保留6位小数
+#include <iostream> 
+#include<iomanip>
+using namespace std;
+int main()
+{
+	int n,i;
+	double x;
+	double const p=3.1415;
+	cin>>n;
+	for(i=1;i<=n;i++)
+		{cin>>x;
+	cout<<fixed<<setprecision(6)<<p*x*x<<endl;}
+}
+
+
+
+
+
+
+题意：给定起始位置，第一步和最后一步只能走一，每一步与前一步相比：大一，相等，小一个。问最小的步数。
+思路：此题相当于一个找规律的题目。是一个先增后减的序列，找出最小与最大的差值比较即可得出答案。
+#include<iostream>  
+using namespace std;  
+int main()  
+{  
+  int n,i,s;
+  double x,y;
+  cin>>n;
+  for(;n--;)
+  {
+	  cin>>x>>y;
+	  s=y-x;
+	  if(s<=1)
+		  cout<<s<<endl;
+	  else
+		  {
+			  for(i=2;;i++)
+			  {
+				  if(i%2==0)
+				  {
+					  if(s>=i&&s<=(i/2)*(1+i/2))
+					  {
+						  cout<<i<<endl;
+						  break;
+			          }
+			      }
+			      
+			  else
+				  {
+					  if(s>=i&&s<=(1+i/2)*(1+i/2))
+					 { 
+					    cout<<i<<endl;
+	                    break;
+					  }
+			      }
+					 
+			}
+	  }
+  } 
+}  
+
+
+
+
+
+
+
+
+
+一个5行的数字三角形。假设给定一个n行数字三角形,计算出从三角形顶至底的一条路径，使该路径经过的数字总和最大。 
+每一步只能由当前位置向左下或右下。 
+你的程序要能接受标准输入。第一行包含一个整数T，表示总的测试次数。 
+#include<iostream> 
+using namespace std;
+int main()
+ {int a[100][100],n,t;
+   cin>>t;
+   while(t--)
+     {cin>>n; 
+		 for(int i=1;i<=n;i++)
+			 for(int j=1;j<=i;j++)
+				 cin>>a[i][j];
+				 for(int i=n-1;i>=0;i--)
+				 {
+					 for(int j=1;j<=i;j++) 
+					 { 
+						 a[i][j]+=max(a[i+1][j+1],a[i+1][j]);
+					 }
+				 }
+				 cout<<a[1][1]<<endl;
+}
+}
+
+
+
+
+
+
+
+写一个判断素数的函数，在主函数输入一个整数，输出是否是素数的消息。
+#include<iostream> 
+#include<cmath>
+using namespace std;
+void sushu(int);
+int main()
+{
+	int n;
+	cin>>n;
+	sushu(n);
+}
+
+void sushu(int x)
+{
+	int a,i;
+	a=int(sqrt((double)x));
+	if(x==1)
+		cout<<"not prime"<<endl;
+	else
+	{
+		for(i=2;i<=a;i++)
+		if(x%i==0)
+			{
+				cout<<"not prime"<<endl;
+				break;
+		   }
+	  if(i>a)
+		  cout<<"prime"<<endl;
+	}
+	
+}
+
+
+
+
+
+输入10个整数，将其中最小的数与第一个数对换，把最大的数与最后一个数对换。写三个函数； ①输入10个数；②进行处理；③输出10个数。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[10],i,min,max=0;
+	for(i=0;i<10;i++)
+		cin>>a[i];
+	min=a[0];
+	max=a[0];
+	for(i=0;i<10;i++)
+		{
+		if(a[i]<min)
+			min=a[i];
+		if(a[i]>max)
+			max=a[i];
+	   }
+	for(i=0;i<10;i++)
+		{
+			if(min==a[i])
+			{
+				a[i]=a[0];
+				a[0]=min;
+		   }
+		    if(max==a[i])
+		    {
+			   a[i]=a[9];
+			   a[9]=max;
+		    }
+	   }
+	for(i=0;i<10;i++)
+		cout<<a[i]<<" ";
+}
+
+
+
+
+
+
+
+有n个整数，使前面各数顺序向后移m个位置，最后m个数变成前面m个数
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[100],b[100],i,n,m,j=0;
+	cin>>n;
+	for(i=0;i<n;i++)
+		cin>>a[i];
+	cin>>m;
+	for(i=0;i<n;i++)
+		b[i+m]=a[i];
+	for(i=n-m;j<m;i++)
+		     {
+				 b[j]=a[i];
+				 j++;
+	         }
+	for(i=0;i<n;i++)
+		cout<<b[i]<<" ";
+}
+
+
+
+
+
+
+
+有一字符串，包含n个字符。写一函数，将此字符串中从第m个字符开始的全部字符复制成为另一个字符串。
+#include <iostream>
+using namespace std;
+int main()
+{
+	char s[100];
+	int i,n,m;
+	cin>>n;
+	for(i=0;i<n;i++)
+		cin>>s[i];
+	cin>>m;
+	for(i=m-1;i<n;i++)
+	cout<<s[i];
+}
+
+
+
+
+
+将十个数进行从大到小的顺序进行排列
+#include <iostream>
+using namespace std;
+int main() 
+{ 
+	int i,j,a[10],temp; 
+    for (i=0;i<10;i++) 
+	   cin>>a[i];
+    for (i=0;i<9;i++)
+		for (j=1;j<10;j++) 
+			if (a[j]>a[j-1])
+			{
+				temp=a[j]; 
+				a[j]=a[j-1]; 
+				a[j-1]=temp; 
+			} 
+	for(i=0;i<10;i++) 
+		{
+			cout<<a[i];
+	if(i<9)
+		cout<<" ";
+	}
+} 
+
+
+
+
+
+有4个互不相同的数字，输出由其中三个不重复数字组成的排列。
+#include<iostream>
+using namespace std;
+int main() 
+{ 
+   int i,j,k,t,n,a[5]; 
+   for (i=0;i<4;i++)
+	   cin>>a[i];
+   for(i=3;i>=0;i--) 
+      for(j=0;j<=3;j++) 
+         if(i!=j)
+	       for(k=0;k<=3;k++) 
+            if(k!=i&&k!=j)
+			   for(t=0;t<=3;t++) 
+                  if(t!=k&&t!=i&&t!=j) 
+                   cout<<a[j]<<" "<<a[k]<<" "<<a[t]<<endl;  
+} 
+
+
+
+
+
+验证尼科彻斯定理，即：任何一个正整数的立方都可以写成一串连续奇数的和。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,c,d;
+    cin>>a;
+    b=a*a*a;
+    cout<<a<<"*"<<a<<"*"<<a<<"="<<b<<"=";
+    for(d=0,c=0;c<a;c++) 
+   {
+       d=a*a-a+1+2*c;
+     if(c==0)
+       cout<<d;
+     else
+	   cout<<"+"<<d;
+   }
+}
+
+
+
+
+
+求矩阵的两对角线上的元素之和
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,x=0;
+	cin>>n;
+	int a[100][100];
+	for(int i=0;i<n;i++)
+		for(int j=0;j<n;j++)
+			cin>>a[i][j];
+	for(int i=0;i<n;i++)
+	  x=x+a[i][i];
+	for(int i=0;i<n;i++)
+	  x=x+a[i][n-i-1];
+	if(n%2!=0)
+	 cout<<x-a[n/2][n/2];  
+	else
+     cout<<x;
+}
+
+
+
+
+一辆以固定速度行驶的汽车，司机在上午10点看到里程表上的读数是一个对称数(即这个数从左向右读和从右向左读是完全一样的)，为95859。两小时后里程表上出现了一个新的对称数。问该车的速度是多少？新的对称数是多少？
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i,a[5];
+	for(i=95859;;i++)
+    {  a[0]=i%10;
+	   a[1]=(i%100-a[0])/10;
+	   a[2]=(i%1000-a[1]*10-a[0])/100;
+	   a[3]=(i%10000-a[2]*100-a[1]*10-a[0])/1000;
+	   a[4]=(i%100000-a[3]*1000-a[2]*100-a[1]*10-a[0])/10000;
+	  if(a[4]==a[0]&&a[3]==a[1])
+		 {cout<<i<<endl;break;}
+	}
+}
+
+
+
+
+
+计算：t=1-1/(2*2)-1/(3*3)-...-1/(m*m）
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	double t=1;
+	int m,i;
+	cin>>m;
+	for(i=2;i<=m;i++)
+		t=t-1.0/(i*i);
+	cout<<fixed<<setprecision(6)<<t;
+}
+
+
+
+
+
+中国古代数学家张丘建在他的《算经》中提出了著名的“百钱买百鸡问题”：鸡翁一，值钱五，鸡母一，值钱三，鸡雏三，值钱一，百钱买百鸡，问翁、母、雏各几何？
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i,j,k;
+	for(i=0;i<=20;i++)
+		for(j=0;j<34;j++)
+			for(k=3;k<100;k++)
+				if(5*i+3*j+k/3==100&&i+j+k==100&&k%3==0)
+					cout<<"cock="<<i<<",hen="<<j<<",chicken="<<k<<endl;
+}
+
+
+
+
+正整数的各位数字之和被Tom称为Tom数。求输入数（<2^32）的Tom数!
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	string s;
+	while(cin>>s)
+	{
+		int x=0;
+		int i;
+		for(i=0;i<s.size();i++)
+		x+=(s[i]-'0');
+		cout<<x<<endl;
+	}
+}
+
+
+
+
+一个球从100m高度自由落下,每次落地后反跳回原来高度的一半,再落下,再反弹.求它在第N次落地时共经过多少米?
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+    double n,i,a=100,s=100;
+	cin>>n;
+	for(i=1;i<=n-1;i++)
+		{
+			a=a/2.0;
+			s=s+a*2;
+	    }
+	   cout<<fixed<<setprecision(4)<<s;
+}
+
+
+
+
+相传国际象棋是古印度舍罕王的宰相达依尔发明的.舍罕王十分喜爱象棋,决定让宰相自己选择何种赏赐.这位聪明的宰相指着8*8共64格的象棋说:陛下,请您赏给我一些麦子吧.就在棋盘的第1格放1粒,第2格放2粒,第三格放4粒,以后每一格都比前一格增加一位,依此放完棋盘一64格,我就感激不尽了.舍罕王让人扛了一袋麦子,他要兑现他的许诺. 
+ 请问,国王要兑现他的许诺共要多少粒麦子赏赐他的宰相?
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	int i;
+	double s=0;
+	for(i=0;i<64;i++)
+		s+=pow(2,double(i));
+	cout<<fixed<<setprecision(0)<<s;
+}
+
+
+
+
+
+张王李三家各有三个小孩。一天，三家的九个孩子在一起比赛短跑，规定不分年龄大小，跑第一得9分，跑第2得8分，依此类推。比赛结果各家的总分相同，且这些孩子没有同时到达终点的，也没有一家的两个或三个孩子获得相连的名次。已知获第一名的是李家的孩子，获得第二的是王家的孩子。问获得最后一名的是谁家的孩子？
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[4][4];
+	int i,j,k;
+	a[1][1]=7;
+	a[2][1]=8;
+	a[3][1]=9;
+	for(i=4;i<6;i++)
+		for(j=4;j<7;j++)
+			for(k=4;i!=j&&k<7;k++)
+				if(k!=i&&k!=j&&15-i-7!=15-j-8&&15-i-7!=15-k-9&&15-j-8!=15-k-9)
+					{
+						a[1][3]=15-i-7;
+						a[2][3]=15-j-8;
+						a[3][3]=15-k-9;
+				}
+				if(a[1][3]==1)
+					cout<<"Z";
+				if(a[2][3]==1)
+					cout<<"W";
+				if(a[3][3]==1)
+					cout<<"L";
+}
+
+
+
+
+
+古希腊数学家毕达哥拉斯在自然数研究中发现，220的所有真约数(即不是自身的约数)之和为： 
+ 1+2+4+5+10+11+20+22+44+55+110＝284。 
+ 而284的所有真约数为1、2、4、71、 142，加起来恰好为220。人们对这样的数感到很惊奇，并称之为亲和数。一般地讲，如果两个数中任何一个数都是另一个数的真约数之和，则这两个数就是亲和数。 
+ 你的任务就编写一个程序，判断给定的两个数是否是亲和数
+输入数据第一行包含一个数M，接下有M行，每行一个实例,包含两个整数A,B；
+对于每个测试实例，如果A和B是亲和数的话输出YES，否则输出NO。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int m,a,b,n=0,x=0,i,j;
+	cin>>m;
+	for(i=1;i<=m;i++)
+	{
+		cin>>a>>b;
+		for(j=1;j<a;j++)
+			if(a%j==0)
+				n=n+j;
+		for(j=1;j<b;j++)
+			if(b%j==0)
+				x=x+j;
+		if(n==b&&x==a)
+			cout<<"YES"<<endl;
+		else
+			cout<<"NO"<<endl;
+	}
+
+
+}
+
+
+
+
+回文串是从左到右或者从右到左读起来都一样的字符串，试编程判别一个字符串是否为回文串。
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	string s;
+	int i,a=0;
+	cin>>s;
+	for(i=0;i<s.size();i++)
+			if(s[i]==s[s.size()-1-i])
+				a++;
+			if(a==i)
+				cout<<"Y";
+			else
+				cout<<"N";
+}
+
+
+
+
+已知一个数列的前3个数为3，4，5，以后每个数为前3个数的和，编程序求此数列的第N项
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,a,b,c,d;
+	cin>>n;
+	a=3;
+	b=4;
+	c=5;
+	for(int i=4;i<=n;i++)
+		{
+			a=a+b+c;
+			d=a;
+	        a=b;
+			b=c;
+			c=d;
+	    }
+	cout<<c;
+
+}
+
+
+
+
+根据输入的半径值，计算球的体积。
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	double r,v;
+    const double p=3.1415; 
+	while(cin>>r)
+		{
+			v=4/3.0*p*r*r*r;
+			cout<<fixed<<setprecision(3)<<v<<endl;
+	}
+}
+
+
+
+
+输入两点坐标（X1,Y1）,（X2,Y2）,计算并输出两点间的距离。
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	int x1,x2,y1,y2;
+	double s;
+	while(cin>>x1>>y1>>x2>>y2)
+		{
+			s=sqrt(double((y1-y2)*(y1-y2)+(x1-x2)*(x1-x2)));
+			cout<<fixed<<setprecision(2)<<s<<endl;
+
+	}
+
+}
+
+
+
+
+计算1~N之间所有奇数之和#include<iostream>
+using namespace std;
+int main()
+{
+
+	int n,i,s=0;
+	cin>>n;
+	for(i=1;i<=n;i++)
+		if(i%2!=0)
+			s+=i;
+	cout<<s;
+}
+
+
+
+
+
+角谷猜想: 
+日本一位中学生发现一个奇妙的“定理”，请角谷教授证明，而教授无能为力，于是产生角谷猜想。猜想的内容是：任给一个自然数，若为偶数除以2，若为奇数则乘3加1，得到一个新的自然数后按照上面的法则继续演算，若干次后得到的结果必然为1。请编程验证。 
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,s;
+	cin>>n;
+	for(;n!=1;)
+	if(n%2==0)
+	  {
+		s=n;
+		n=n/2;
+		cout<<s<<"/2="<<n<<endl;
+	  }
+	else
+      {
+		  s=n;
+		  n=n*3+1;
+		  cout<<s<<"*3+1="<<n<<endl;
+	}
+
+}
+
+
+
+
+如果一个正整数等于其各个数字的立方和，则称该数为阿姆斯特朗数(亦称为自恋性数)。 
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+
+{
+
+	for(int i=2;i<1000;i++)
+
+		if(pow(double(i%10),3)+pow(double((i%100-i%10)/10),3)+pow(double((i%1000-i%100)/100),3)==i)
+
+			cout<<i<<" ";
+
+}
+
+
+
+
+
+输入N*N的矩阵，输出它的转置矩阵。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[100][100];
+	int i,j;
+	int n;
+	cin>>n;
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+			cin>>a[i][j];
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+		{
+			cout<<a[j][i];
+	   if(j==n-1)
+		 cout<<endl;
+	   else
+		 cout<<" ";
+		}
+}
+
+
+
+
+
+编写程序，实现字符串的逆序输出。
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	string s;
+	getline(cin,s);
+	for(int i=s.size()-1;i>=0;i--)
+		cout<<s[i];
+}
+
+
+
+
+
+ 编写程序，对整型二维数组中查找每一行的最大值，输出各行的最大值之和。二维数组的行、列数均不超过10。 编写程序，对整型二维数组中查找每一行的最大值，输出各行的最大值之和。二维数组的行、列数均不超过10。
+输入数组的行数和列数
+再依次输入数组的全部元素
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[10][10];
+	int i,j,b,c,s,x=0;
+	cin>>b>>c;
+	for(i=0;i<b;i++)
+		for(j=0;j<c;j++)
+			cin>>a[i][j];
+	for(i=0;i<b;i++)
+		{
+			s=a[i][0];
+		for(j=0;j<c;j++)
+		{
+			if(s<a[i][j])
+				s=a[i][j];
+			if(j==c-1)
+				x=x+s;
+		}
+	}
+	cout<<x;
+}
+
+
+
+
+统计输入字符串（只有一行，不超过1000个字符）中括号出现的次数。注：包括“（”，“）”，“[”，“]”,“{”，“}”6种括号。
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	int a=0,b=0,c=0,d=0,e=0,f=0;
+	string s;
+	getline(cin,s);
+	for(int i=0;i<s.size();i++)
+	{
+		if(s[i]=='(')
+			a++;
+		if(s[i]==')')
+			b++;
+		if(s[i]=='[')
+			c++;
+		if(s[i]==']')
+			d++;
+		if(s[i]=='{')
+			e++;
+		if(s[i]=='}')
+			f++;
+	}
+	cout<<a<<" "<<b<<" "<<c<<" "<<d<<" "<<e<<" "<<f;
+}
+	
+
+
+
+	
+
+输出7和7的倍数，还有包含7的数字例如（17，27，37...70，71，72，73...）
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,x=0;
+	cin>>n;
+	for(int i=1;i<=n;i++)
+		if((i/7)*7==i||i%10==7||i%100/10==7||i%1000/100==7||i%10000/1000==7||i%100000/10000==7)
+			x++;
+	cout<<x;
+
+}
+
+
+
+
+
+两个正整数，计算这两个数的最小公倍数
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,i;
+		cin>>a>>b;
+	for(i=0;;i++)
+		if((a+i)%b==0&&(a+i)%a==0)
+			{
+				cout<<a+i;
+				break;
+		}
+}
+
+
+
+
+
+
+
+有n(n<=100)个整数，已经按照从小到大顺序排列好，现在另外给一个整数x，请将该数插入到序列中，并使新的序列仍然有序。输入输入数据包含多个测试实例，每组数据由两行组成，第一行是n和m，第二行是已经有序的n个数的数列。n和m同时为0标示输入数据的结束，本行不做处理。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int m,n,i,x,j,a[100];
+     while(cin>>n>>m)
+	{
+		if(m==0&&n==0)
+			break;
+	    for(i=0;i<n;i++)
+		   cin>>a[i];
+	   for(i=0;i<n;i++)
+	      if(m>a[i]&&m<a[i+1])		  {
+			  for(j=n;j>i;j--)
+	             a[j]=a[j-1];
+			 a[i+1]=m;		      break;
+		  }
+		  for(i=0;i<=n;i++)
+		  {
+			  cout<<a[i];
+			  if(i!=n)
+				  cout<<" ";		  }
+		  cout<<endl;
+	   }
+}
+
+
+
+
+ 他是这么变换的，大家都知道手机上的字母： 1--1， abc--2, def--3, ghi--4, jkl--5, mno--6, pqrs--7, tuv--8 wxyz--9, 0--0,就这么简单，渊子把密码中出现的小写字母都变成对应的数字，数字和其他的符号都不做变换，声明：密码中没有空格，而密码中出现的大写字母则边成小写之后往后移一位，如：X，先边成小写，再往后移一位，不就是y了嘛，简单吧。记住，z往后移是a哦。
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	string s;
+	getline(cin,s);
+	for(int i=0;i<s.size();i++)
+	{
+		if(s[i]=='Z')
+			s[i]='a';
+		if(s[i]=='a'||s[i]=='b'||s[i]=='c')
+			s[i]='2';
+		if(s[i]=='d'||s[i]=='e'||s[i]=='f')
+			s[i]='3';
+		if(s[i]=='g'||s[i]=='h'||s[i]=='i')
+			s[i]='4';
+		if(s[i]=='j'||s[i]=='k'||s[i]=='l')
+        	s[i]='5';
+		if(s[i]=='m'||s[i]=='n'||s[i]=='o')
+	        s[i]='6';
+		if(s[i]=='p'||s[i]=='q'||s[i]=='r'||s[i]=='s')
+			s[i]='7';
+		if(s[i]=='t'||s[i]=='u'||s[i]=='v')
+	        s[i]='8';
+		if(s[i]=='w'||s[i]=='x'||s[i]=='y'||s[i]=='z')
+			s[i]='9';
+		if(s[i]>='A'&&s[i]<'Z')
+			s[i]=s[i]+33;
+	}
+	for(int i=0;i<s.size();i++)
+		cout<<s[i];
+}
+
+
+
+
+输入日期a年b月c日，输出c日到该年该月的月末日的天数。
+假设输入的日期一定是合法的日期。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,c;
+	cin>>a>>b>>c;
+	if(b==1||b==3||b==5||b==7||b==8||b==10||b==12)
+		cout<<31-c;
+	if(b==4||b==6||b==9||b==11)
+		cout<<30-c;
+	if(b==2)
+	   if(a%4==0&&a%100!=0||a%400==0)
+			cout<<29-c;
+	   else
+			cout<<28-c;
+}
+
+
+
+
+
+
+输出100->200之间的素数的个数，以及所有的素数。
+#include <iostream>  
+#include<cmath>
+using namespace std;    
+int main()  
+{
+	int m,j=0,i,k,n=0,a[100];
+    for(m=100;m<=200;m++)
+	{
+		k=int(sqrt(double(m)));
+        i=2;
+		while(m%i&&i<=k)
+             i++;
+        if(i>k)
+        {
+	        a[j]=m;
+            j++; 
+		}
+ }
+	cout<<j<<endl;
+    for(i=0;i<j;i++)
+	{
+		cout<<a[i];
+       if(i!=j-1)
+	    cout<<" ";
+	}
+}   
+ 
+
+
+素数有很多神奇的性质，所以很美。我们知道一个日期将年、月、日按顺序连接在一起可以组成一个八位数，例如2011年3月6日可以写成20110306。我的某个MM的生日组成的数是一个素数。偶尔我叫她素MM，没人知道是啥意思，她自己也不知道。O(∩_∩)O哈哈~我心里可是真的美美的(⊙o⊙)哦！
+嗯，什么？你的生日也是素数？你也想做“素MM”或者“素GG”？那好吧，不过我可是很小气的哦！只有你出生在1988年或者1989年我才让你做“素MM”或“素GG”。要不然，你把这两年里日期组成的数是素数的找出来也可以
+
+#include <iostream>  
+#include<cmath>
+using namespace std;    
+int main()  
+{
+	int m,j=0,i,k,n=0,a[1000];
+    for(m=19880101;m<=19891231;m++)
+	{
+		if((m%10000)/100==1||(m%10000)/100==3||(m%10000)/100==5||(m%10000)/100==7||(m%10000)/100==8||(m%10000)/100==10||(m%10000)/100==12)
+		if(m%100<=31)
+		{
+			k=int(sqrt(double(m)));
+        i=2;
+		while(m%i&&i<=k)
+             i++;
+        if(i>k)
+        {
+	        a[j]=m;
+            j++; 
+		}
+		}
+		if((m%10000)/100==4||(m%10000)/100==6||(m%10000)/100==9||(m%10000)/100==11)
+		if(m%100<31)
+		{
+			k=int(sqrt(double(m)));
+        i=2;
+		while(m%i&&i<=k)
+             i++;
+        if(i>k)
+        {
+	        a[j]=m;
+            j++; 
+		}
+		}
+		if((m%10000)/100==2)
+		if(m%100<29)
+		{
+			k=int(sqrt(double(m)));
+        i=2;
+		while(m%i&&i<=k)
+             i++;
+        if(i>k)
+        {
+	        a[j]=m;
+            j++; 
+		}
+		}
+ }
+    for(i=0;i<j;i++)
+	{
+		cout<<a[i];
+       cout<<endl;
+	}
+}   
+
+
+有一篇文章，共有三行文字，统计这篇文章中的空格数。
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	int i,n=0;
+	string a,b,c;
+	getline(cin,a);
+	getline(cin,b);
+	getline(cin,c);
+	for(i=0;i<a.size();i++)
+		if(a[i]==' ')
+		n++;
+	for(i=0;i<b.size();i++)
+		if(b[i]==' ')
+		n++;
+	for(i=0;i<c.size();i++)
+		if(c[i]==' ')
+		n++;
+	cout<<n;
+}
+
+
+
+
+计算字符串的有效长度，定义有效字符串由小写字符’a’~’z’组成，其长度为遇到第一个无效字符长度；
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	int n,i,x;
+	string s;
+	cin>>n;
+	for(i=0;i<n;i++)
+	{
+		cin>>s;
+		x=0;
+		for(int j=0;j<s.size();j++)
+			if(s[j]>='a'&&s[j]<='z')
+				x++;
+			else
+				break;
+		cout<<x<<endl;
+	}
+
+
+}
+
+
+
+
+
+
+将字符串中指定的字母进行大小写转换，如果是大写则转换为小写，小写转换大写
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	int a;
+	char n;
+	string s;
+	cin>>a;
+	for(int i=0;i<a;i++)
+	{
+		cin>>n;
+		cin>>s;
+		for(int j=0;j<s.size();j++)
+			{if(n<='z'&&n>='a')
+				{if(s[j]==n)
+					{s[j]=n-32;
+		             continue;}
+		        if(s[j]==n-32)
+					s[j]=n;}
+			if(n<='Z'&&n>='A')
+				{if(s[j]==n)
+					{s[j]=n+32;
+			         continue;}
+		        if(s[j]==n+32)
+					s[j]=n;}
+		}
+		for(int i=0;i<s.size();i++)
+			cout<<s[i];
+		cout<<endl;
+	}    
+}
+
+
+
+
+
+输出m与n之间的孪生素数，孪生素数指的是相差2的素数。
+#include <iostream>  
+#include<cmath>
+using namespace std;    
+int main()  
+{  
+ int m,i,k,j=0,n=0,a[500],b,c;
+ cin>>b>>c;
+ for(m=b;m<=c;m++)
+ {k=int(sqrt(double(m)));
+  i=2;
+  while(m%i&&i<=k)
+      i++;
+  if(i>k)
+ { a[j]=m;
+  j++;}
+ }
+ for(i=0;i<j;i++)
+	 if(a[i+1]-a[i]==2)
+		 cout<<a[i]<<" "<<a[i+1]<<endl;
+}   
+
+
+
+
+
+
+从屏幕输入一个两个正数的四则运算（包括：'+','-','*','/'）表达式（中间没有空格），计算该表达式的值并输出，测试数据包含多组；
+#include <iostream>  
+using namespace std;    
+int main()  
+{  
+	int a,b;
+	char x;
+	int n;
+	cin>>n;
+	for(int i=0;i<n;i++)
+	{
+		cin>>a>>x>>b;
+	switch(x)
+		{
+	    case '+' : cout<<a+b<<endl;break;
+		case '-' : cout<<a-b<<endl;break;
+		case '/' : cout<<a/b<<endl;break;
+		case '*' : cout<<a*b<<endl;break;
+	}
+	}
+}   
+
+
+
+
+
+计算一元二次平方根, aX2+bx+c = 0,并输出到屏幕；测试数据包含多组
+     如果有两个根，输出每个根的整数部分（中间以空格隔开），根的输出顺按照从小到大；
+     如果有一个根，则输出一个根的整数部分；
+     如果没有根，则输出“no root”；
+#include <iostream> 
+#include<cmath>
+using namespace std;    
+int main()  
+{  
+	double n,a,b,c,e;
+	cin>>n;
+	for(int i=0;i<n;i++)
+	{
+		cin>>a>>b>>c;
+		e=b*b-4*a*c;
+		if(a==0)
+			cout<<int(-c/b)<<endl;
+		else
+			if(e==0)
+				cout<<int(-b/(2*a))<<endl;
+			else if(e>0)
+				cout<<int((-b-sqrt(e)))/(2*a)<<" "<<int((-b+sqrt(e))/(2*a))<<endl;
+			else
+				cout<<"no root"<<endl;
+	}
+}   
+
+
+
+
+
+A和B 都是由3个整数组成，分别表示时分秒，比如，假设A为34 45 56，就表示A所表示的时间是34小时 45分钟 56秒。求A+B
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,i;
+	int a,b,c,d,e,f;
+	cin>>n;
+	for(i=0;i<n;i++)
+	{
+		cin>>a>>b>>c>>d>>e>>f;
+		a=a+d;
+		b=b+e;
+		c=c+f;
+		if(c/60)
+		{
+			b=b+c/60;
+			c=c%60;
+		}
+		if(b/60)
+		{
+			a=a+b/60;
+			b=b%60;
+		}
+		cout<<a<<" "<<b<<" "<<c<<endl;
+	}
+
+}
+
+
+
+
+对于m*n的二维数组，计算出每行中所有元素之和，输出其中最大的；计算出每列中所有元素之和，输出其中最大的。
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	int i,j,b,m,n,a[100][100];
+	int max;
+	cin>>m>>n;
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			cin>>a[i][j];
+	max=0;
+	for(i=0;i<m;i++)
+		{b=0;
+		for(j=0;j<n;j++)
+			b+=a[i][j];
+			if(max<b)
+				max=b;
+	   }
+	cout<<max<<endl;
+	max=0;
+	for(i=0;i<n;i++)
+		{b=0;     
+		for(j=0;j<m;j++)
+			b+=a[j][i];
+			if(max<b)
+				max=b;
+	   }
+	cout<<max<<endl;
+
+	        
+}
+
+
+
+
+
+
+编写程序，从键盘读入一正整数n,（n<10）,并输出如下图形：
+1
+
+2 2 2
+
+3 3 3 3 3
+
+.
+
+.
+
+n n . . . . . n n (共2*n-1个n)
+
+.
+
+. 
+
+3 3 3 3 3
+
+2 2 2
+
+1
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,i,j;
+	cin>>n;
+	for(i=1;i<=n;i++)
+		for(j=1;j<=2*i-1;j++)
+		{
+			cout<<i;
+	        if(2*i-1!=j)
+				cout<<" ";
+			else
+				cout<<endl;
+		}
+	for(i=n-1;i>0;i--)
+		for(j=1;j<=2*i-1;j++)
+		{
+			cout<<i;
+	      if(2*i-1!=j)
+			cout<<" ";
+		  else
+			  cout<<endl;
+		}
+}
+
+
+
+
+输入n个正整数，n不大于100，对其中的奇数进行从小到大排序，输出排序结果。
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,a[100],i,j,s;
+    cin>>n;
+    for(i=0;i<n;i++)
+        cin>>a[i];
+    for(i=0;i<n;i++)
+        for(j=0;j<n-1-i;j++)
+            if(a[j]>a[j+1])
+            {
+                s=a[j];
+                a[j]=a[j+1];
+                a[j+1]=s;
+            }
+            for(i=0;i<n;i++)
+                if(a[i]%2)
+                    cout<<a[i]<<" ";
+            cout<<endl;
+}
+
+
+
+
+计算一个N*N方阵外围数据的平均值。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i,j,a[10][10],n;
+	double s=0;
+	cin>>n;
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+		   cin>>a[i][j];
+	for(i=0,j=0;j<n;j++)
+		s+=a[i][j];
+	for(i=0,j=0;i<n;i++)
+		s+=a[i][j];
+	for(i=0,j=n-1;i<n;i++)
+		s+=a[i][j];
+	for(i=n-1,j=0;j<n;j++)
+		s+=a[i][j];
+	s=s-a[0][0]-a[n-1][n-1]-a[n-1][0]-a[0][n-1];
+	s=s/(4*n-4);
+	cout<<s;
+
+
+}
+
+
+
+
+
+输出从a到b之间能被7整除，且个位为1的数。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,m,i;
+	cin>>n>>m;
+	if(n<m)
+	{
+		for(i=n;i<=m;i++)
+		if(i%7==0&&i%10==1)
+			cout<<i<<endl;
+	}
+	else
+		{
+		for(i=m;i<=n;i++)
+		if(i%7==0&&i%10==1)
+			cout<<i<<endl;
+	}
+
+}
+
+
+
+
+
+实现两个矩阵的加法
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[100][100],b[100][100],i,j;
+	int n;
+	cin>>n;
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+			cin>>a[i][j];
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+			cin>>b[i][j];
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+			a[i][j]=a[i][j]+b[i][j];
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+		{
+			cout<<a[i][j];
+			if(j!=n-1)
+				cout<<" ";
+			else
+		        cout<<endl;
+		}
+}
+
+
+
+
+把若干个m进制数转成十进制，并输出其中的素数
+输入m
+输入若干个m进制数字，m大于10时，使用小写字母a,b,c,...表示10,11,12,...
+#include<iostream>
+#include<string>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int m;
+    cin>>m;
+    string n;
+    int x,s=0,b;
+    int a[100],j=0;
+    while(cin>>n)
+    {
+        s=0;
+        b=n.size();
+        for(int i=0;i<n.size();i++)
+        {
+            if(n[i]=='a')
+              x=10;
+            if(n[i]=='b')
+             x=11;
+            if(n[i]=='c')
+             x=12;
+            if(n[i]=='0')
+                x=0;
+            if(n[i]=='1')
+                x=1;
+            if(n[i]=='2')
+                x=2;
+            if(n[i]=='3')
+                x=3;
+            if(n[i]=='4')
+                x=4;
+            if(n[i]=='5')
+                x=5;
+            if(n[i]=='6')
+                x=6;
+            if(n[i]=='7')
+                x=7;
+            if(n[i]=='8')
+                x=8;
+            if(n[i]=='9')
+                x=9;
+                s=s+x*pow(double(m),b-i-1);
+        }
+        a[j]=s;
+        j++;
+    }
+    int l=0;
+    for(int i=0;i<j;i++)
+    {
+        l=0;
+        for(int k=2;k<a[i];k++)
+        {
+            if(a[i]%k==0)
+                l++;}
+        if(l==0)
+            cout<<a[i]<<endl;
+    }
+      
+ 
+}
+
+
+
+输入数据个数n
+再输入n个数据
+输出这些数的最大值、最小值以及它们的和
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[100],i;
+	int n,max,min,s;
+	while(cin>>n)
+	{
+		for(i=0;i<n;i++)
+		   cin>>a[i];
+		max=a[0];
+		min=a[0];
+		s=0;
+		for(i=0;i<n;i++)
+		{
+			if(a[i]>max)
+				max=a[i];
+			if(a[i]<min)
+			   min=a[i];
+			   s+=a[i];
+		}
+		cout<<max<<" "<<min<<" "<<s<<endl;
+	}
+		
+}
+	
+	
+
+
+
+
+
+每当用户需要叫号时，他都要选择业务类型A或B或C，我们的程序需要对该用户在该业务类型中自动分配编号并输出。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i=1,j=1,k=1;
+	char n;
+	while(cin>>n)
+		switch(n)
+		{
+		case 'A' : cout<<"A"<<i<<endl;
+			i++;break;
+		case 'B' : cout<<"B"<<j<<endl;
+			j++;break;
+		case 'C' : cout<<"C"<<k<<endl;
+			k++;break;
+	   }
+}
+
+
+
+
+
+
+诗人H年少的时候就离开了故乡，等白发苍苍时才返回。有诗为证：“少小离家老大回，乡音无改鬓毛衰。儿童相见不相识，笑问客从何处来？” 假定诗人H离开故乡的日子为公元A年B月C日，返回的日子为公元X年Y月Z日。求诗人H离开故乡的总天数。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,c,d,e,f;
+	int s=0,x,n=0;
+	cin>>a>>b>>c;
+	cin>>d>>e>>f;
+	x=(d-a)*365;
+	switch(b-1)
+		{ 
+		  case 12 :  s+=31;
+	      case 11 :  s=s+30;
+		  case 10 :  s=s+31;
+          case 9 :  s=s+30;
+	      case 8 :  s=s+31;
+		  case 7 :  s=s+31;
+		  case 6 :  s=s+30;
+		  case 5 :  s=s+31;
+		  case 4 :  s=s+30;
+		  case 3 :  s=s+31;
+		  case 2 :  s+=28; 
+		  case 1 : s+=31;
+		  case 0 : s+=0;
+	}
+	switch(e-1)
+		{ 
+		  case 12 :  n+=31;
+	      case 11 :  n+=30;
+		  case 10 :  n=n+31;
+          case 9 :  n=n+30;
+	      case 8 :  n=n+31;
+		  case 7 :  n=n+31;
+		  case 6 :  n=n+30;
+		  case 5 :  n=n+31;
+		  case 4 :  n=n+30;
+		  case 3 :  n=n+31;
+		  case 2 :  n+=28; 
+		  case 1 : n+=31;
+		  case 0 : n+=0;
+	}
+	x=x-c+f-s+n;
+	if(e>2&&b<3)
+	{
+		for(int i=a;i<=d;i++)
+			if(i%4==0&&i%100!=0||i%400==0)
+				x++;
+	}
+	else if(e>2)
+	{
+		for(int i=a+1;i<=d;i++)
+			if(i%4==0&&i%100!=0||i%400==0)
+				x++;
+	}
+	else if(b<3)
+	{
+		for(int i=a;i<d;i++)
+			if(i%4==0&&i%100!=0||i%400==0)
+				x++;
+	}
+	else
+	{
+		for(int i=a-1;i<d;i++)
+			if(i%4==0&&i%100!=0||i%400==0)
+				x++;
+	}
+	cout<<x+1;
+
+	
+}
+
+
+
+
+
+输入数字范围
+输出该范围内满足下列条件的数字：
+1、能够被3整除
+2、十位数比个位数大1
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,i,c;
+	cin>>a>>b;
+	if(a>b)
+	{
+		c=a;
+		a=b;
+		b=c;
+	}
+	for(i=a;i<=b;i++)
+		if(i%3==0&&(i%100-i%10)/10-i%10==1)
+			cout<<i<<" ";
+	
+}
+
+
+
+
+
+求方程的根，分别求当b^2-4ac大于0、等于0、和小于0时的根。
+#include<iostream>
+#include<iomanip>
+using namespace std;
+#include<cmath>
+ int main()
+ {
+	 int a,b,c,d;
+     float x1,x2,shibu,xubu;
+     cin>>a>>b>>c;
+     d=b*b-4*a*c;
+     if(d==0)
+       cout<<"x1=x2="<<-b/(2.0*a);
+     else
+     {
+		 if(d>0)
+		 {
+			x1=(-b+sqrt(double(d)))/(2.0*a);
+            x2=(-b-sqrt(double(d)))/(2.0*a);
+			cout<<"x1="<<x1<<" x2="<<x2<<endl;
+         }
+        else
+        {
+			shibu=-b/(2.0*a);
+            xubu=sqrt(double(-d))/(2.0*a);
+		    cout<<fixed<<setprecision(3)<<"x1="<<shibu<<"+"<<xubu<<"i x2="<<shibu<<"-"<<xubu<<"i"<<endl;
+        }
+     }
+ }   
+
+
+
+
+
+输入奇数n，输出以n为长的缺三角矩形；输入为多组测试数据，当 n 为0时结束。#include<iostream> 
+using namespace std; 
+int main() 
+{
+	int i,j,n,k;
+	char a[100][100];
+	while(cin>>n)
+	{
+		if(n==1)
+			cout<<"*"<<endl<<"#"<<endl;
+		else
+		{
+		for(i=0;i<n;i++)
+			for(j=0;j<n;j++)
+			{
+				a[i][j]='*';
+			}
+		for(i=1;i<n;i++)
+			for(j=(n+1)/2-i,k=(i+1)*2-3;k>0;k--)
+			{	a[i][j]='#';
+		        j++;
+		}
+		
+		for(i=0;i<=(n+1)/2;i++)
+			for(j=0;j<n;j++)
+			{
+				cout<<a[i][j];
+		if(j==n-1)
+			cout<<endl;
+			}
+	}
+	}
+}
+
+
+
+
+
+
+中国有句俗语叫“三天打鱼，两天晒网”。现某人从2000年1月1日起开始“三天打鱼，两天晒网”，请编程判断此人在以后的某年某月某日是在“打鱼”还是在“晒网”，其中以后的某年某月某日从键盘输入，打鱼则输出1，晒网则输出2。假设输入的一定是合法的年月日。#include<iostream>
+using namespace std;
+int main()
+{	int a,b,c;
+	int s=0,x,n=0;
+	cin>>a>>b>>c;
+	x=(a-2000)*365;	switch(b-1)
+	{
+          case 12 :  s+=31;
+	  case 11 :  s=s+30;
+	  case 10 :  s=s+31;
+          case 9 :  s=s+30;	  case 8 :  s=s+31;
+	  case 7 :  s=s+31;
+	  case 6 :  s=s+30;
+	  case 5 :  s=s+31;	  case 4 :  s=s+30;
+	  case 3 :  s=s+31;
+	  case 2 :  s+=28; 
+	  case 1 : s+=31;
+	  case 0 : s+=0;	}	x=x+s+c;
+	if(b>2)
+	{	for(int i=2000;i<=a;i++)
+		if(i%4==0&&i%100!=0||i%400==0)
+			x++;	}	else
+	{
+	for(int i=2000;i<a;i++)	if(i%4==0&&i%100!=0||i%400==0)			x++;	}
+	   	x=x%5;
+	   if(x==1||x==2||x==3)		   cout<<"1"<<endl;
+	   if(x==4||x==5||x==0)		   cout<<"2"<<endl;
+   }
+
+
+
+题目描述字符串的输入输出处理。输入第一行是一个正整数N，最大为100。之后是多行字符串（行数大于N）， 每一行字符串可能含有空格，字符数不超过1000。输出先将输入中的前N行字符串（可能含有空格）原样输出，再将余下的字符串（不含有空格）以空格或回车分割依次按行输出。每行输出之间输出一个空行。
+#include<iostream>
+#include<string>using namespace std;
+int main() {
+   char s[1000];
+   int i,n,k=0,j=0;   cin>>n;
+   while(cin.get(s[j]))
+	 j++;   for(i=1;;i++)
+   {	cout<<s[i];
+	if(s[i]=='\n')	{	  cout<<endl;	  k++;        }	   if(k==n)
+	     break;   }
+    for(i=i+1;i<j;i++)
+    {
+	if(s[i]=='\n')        {
+          cout<<s[i];
+	  cout<<endl;
+        }	else if(s[i]==' ')	{
+	    cout<<endl;	    cout<<endl;
+        }	else
+	    cout<<s[i];
+    }
+} 
+
+
+
+
+
+输入一个十进制数a，输入要转成的进制数N（N<=36）
+输出转化结果，结果中大于9的数字一次使用小写字母a（10）、b（11）、c（12）、...表示
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	int m,n,i=0,x;
+	char a[100];
+	cin>>n>>m;
+	while(n!=0)
+	{
+		
+	    if(n%m<10) 
+			 a[i]=n%m+48;
+		else
+			a[i]=n%m+87;
+	n=n/m;
+	i++;
+	}
+	for(int j=i-1;j>=0;j--)
+		cout<<a[j];
+}
+
+
+
+
+
+他是这么变换的，大家都知道手机上的字母： 1--1， abc--2, def--3, ghi--4, jkl--5, mno--6, pqrs--7, tuv--8 wxyz--9, 0--0,就这么简单，老王把密码中出现的小写字母都变成对应的数字，数字和其他的符号都不做变换，声明：密码中没有空格，而密码中出现的大写字母则边成小写之后往后移一位，如：X，先边成小写，再往后移一位，不就是y了嘛，简单吧。记住，z往后移是a哦。
+#include<iostream>
+using namespace std;
+#include<string>
+int main()
+{
+	string a;
+	int i;
+	while(cin>>a)
+	{
+	for(i=0;i<a.size();i++)
+	{
+				if(a[i]=='a'||a[i]=='b'||a[i]=='c')
+			a[i]='2';
+		if(a[i]=='d'||a[i]=='e'||a[i]=='f')
+			a[i]='3';
+		if(a[i]=='g'||a[i]=='h'||a[i]=='i')
+			a[i]='4';
+		if(a[i]=='j'||a[i]=='k'||a[i]=='l')
+			a[i]='5';
+		if(a[i]=='m'||a[i]=='n'||a[i]=='o')
+			a[i]='6';
+		if(a[i]=='p'||a[i]=='q'||a[i]=='r'||a[i]=='s')
+			a[i]='7';
+		if(a[i]=='t'||a[i]=='u'||a[i]=='v')
+			a[i]='8';
+		if(a[i]=='w'||a[i]=='x'||a[i]=='y'||a[i]=='z')
+			a[i]='9';
+		if(a[i]>='A'&&a[i]<'Z')
+			a[i]=a[i]+33;
+		if(a[i]=='Z')
+			a[i]='a';
+
+	}
+		cout<<a<<endl;
+	}
+}
+
+
+
+输入一个二进制数，以#结束，如果用户的输入含有非0、1、#的字符，直接忽略这些字符
+输出这个二进制数对应的十进制数
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	char a[100];
+	int i,j,n=0,k=0;
+	for(i=0;;i++)
+	{
+		cin>>a[i];
+	if(a[i]=='#')
+		break;
+	}
+	for(j=i-1;j>=0;j--)
+	{
+		if(a[j]=='0')
+			{n=n+0*pow(double(2),k);
+		k++;}
+		if(a[j]=='1')
+		{	n=n+1*pow(double(2),k);
+		k++;}
+	}
+		cout<<n;
+}
+
+
+
+
+
+定义：回文数是从前往后和从后往前得到的数是相同的。
+给你一个正整数N，你需要找到比N大的回文数P，而且这个回文数是其中最小的那一个。
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	int n;
+	int a[100],j=0;
+	while(cin>>n)
+	{
+		for(int i=n+1;;i++)
+		{
+			for(j=0;;j++)
+		{
+			a[j]=(i%int(pow((double)10,j+1))-i%int(pow((double)10,j)))/pow((double)10,j);
+			if(i%int(pow((double)10,j))==i)	
+				break;
+		}
+			a[0]=i%10;
+			int k=0;
+			for(int i=0;i<j;i++)
+				if(a[i]!=a[j-1-i])
+					k++;
+			if(k==0)
+			{
+				cout<<i<<endl;
+				break;
+			}
+		}
+	}
+}
+
+
+
+有一个长度为n(n<=100)的数列，该数列定义为从2开始的递增有序偶数（公差为2的等差数列），现在要求你按照顺序每m个数求出一个平均值，如果最后不足m个，则以实际数量求平均值。编程输出该平均值序列。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[100];
+	int m,n,x;
+	while(cin>>n>>m)
+	{
+	x=2;
+	for(int i=0;i<n;i++)
+	{
+		a[i]=x;
+		x+=2;
+	}
+	int s=0,j=0,i;
+	int b[50]={0};
+	for(i=0;i<n;i++)
+	{
+		s+=a[i];
+		if((i+1)%m==0)
+		{
+			b[j]=s/m;
+			j++;
+			s=0;
+		}
+	}
+		int k,l,w=0,h;
+		if((n%m)<m)
+		{
+			for(k=n-1,l=0;l<n%m;l++,k--)
+			{
+				w+=a[k];
+				h=w/(n%m);
+			}
+		}
+		for(i=0;i<j;i++)
+		{
+			cout<<b[i];	
+			if(i!=j-1)
+				cout<<" ";
+		}
+		if(w!=0)
+		{
+		cout<<" "<<h;
+		}
+		cout<<endl;
+	}
+}
+
+
+
+
+
+蛇形打印矩阵
+输入正数n，按照下列格式进行在屏幕上打印出n到1；
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,i,j,k;
+	int a[50][50]={0};
+	cin>>n;
+	int m;
+	m=n;
+	for(i=0;n>0;i++)
+	{
+		if(i%2==0)
+			{
+				j=0;
+				for(k=i;k>=0;k--)
+				{
+					a[k][j]=n;
+				    n--;
+					j++;
+				}
+			}
+			else
+			{
+				j=0;
+				for(k=i;k>=0;k--)
+				{
+					a[j][k]=n;
+					n--;
+					j++;
+				}
+		}
+	}
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<m;j++)
+			if(a[i][j]>0)
+				cout<<a[i][j]<<" ";
+		if(a[i][0]>0)
+		cout<<endl;
+	}
+}
+
+
+
+
+
+已知元素从小到大排列的两个数组x[]和y[]，请写出一个程序算出两个数组彼此之间差的绝对值中最小的一个，这叫做数组的距离
+
+#include<iostream>
+using namespace std;
+#include<cmath>
+int main()
+{
+	int m,n,s,min;
+	cin>>m>>n;
+	int *a=new int[m];
+	int *b=new int[n];
+	for(int i=0;i<m;i++)
+		cin>>a[i];
+	for(int i=0;i<n;i++)
+		cin>>b[i];
+	min=a[1]-b[1];
+	min=fabs(double(min));
+	for(int i=0;i<m;i++)
+		for(int j=0;j<n;j++)
+		{
+			s=a[i]-b[j];
+			s=fabs(double(s));
+			if(s<min)
+				min=s;
+		}
+		cout<<min<<endl;
+		delete a;
+		delete b;
+		a=NULL;
+		b=NULL;
+}
+
+
+
+
+
+将两个升序整型数组进行合并，使得合并后的数组保持升序。
+#include<iostream>
+using namespace std;
+int main()
+{
+	int m,n,i,s;
+	int a[100000];
+	cin>>m>>n;
+	for(i=0;i<m;i++)
+		cin>>a[i];
+	for(;i<m+n;i++)
+		cin>>a[i];
+	for(i=0;i<m+n;i++)
+		for(int j=0;j<m+n-i;j++)
+			if(a[j]>a[j+1])
+			{
+				s=a[j];
+				a[j]=a[j+1];
+				a[j+1]=s;
+			}
+		cout<<a[4]<<endl;
+		cout<<a[m+n-5]<<endl;
+}
+
+
+
+输入一组成绩，由高到低输出其中前5名。
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[100],i=0,j;
+    int n,s;
+    while(cin>>n)
+    {
+        a[i]=n;
+        i++;
+    }
+    n=i;
+    for(i=0;i<n;i++)
+        for(j=0;j<n-i-1;j++)
+            if(a[j]<a[j+1])
+            {
+                s=a[j];
+                a[j]=a[j+1];
+                a[j+1]=s;
+            }
+    for(i=0;i<5;i++)
+    {
+        cout<<a[i];
+        cout<<" ";
+    }
+    cout<<endl;
+}
+
+
+
+
+
+长度为10的数组，初始化为1 2 3 4 5 6 7 8 9 10
+输入下标，删除该下标元素，连续做两遍
+输入下标，在该下标处添加元素，连续做两遍
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[]={1,2,3,4,5,6,7,8,9,10,0};
+	int b,c,d,e,f,g;
+	int i;
+	cin>>b>>c>>d>>e>>f>>g;
+	for(i=b;i<10;i++)
+	{
+		a[i]=a[i+1];	
+	}
+	for(i=c;i<9;i++)
+	{
+		a[i]=a[i+1];	
+	}
+	for(i=7;i>=d;i--)
+	{
+		a[i+1]=a[i];
+	}
+	a[i+1]=e;
+	for(i=8;i>=f;i--)
+	{
+		a[i+1]=a[i];
+	}
+	a[i+1]=g;
+	for(i=0;i<10;i++)
+	{
+		cout<<a[i];
+		if(i!=9)
+			cout<<" ";
+	}
+}
+
+
+
+
+
+
+
+下面的程序用于管理某班级的学生信息（包括学号、姓名、成绩），
+首先输入学生数量n。 再依次输入n个学生的学号、姓名、成绩。 最后输入分数线k。
+依次输出成绩大于等于k的学生信息（学号、姓名、成绩）
+#include <iostream>
+using namespace std;
+struct person
+{
+	int id;
+	char name[15];
+	int score;
+};
+void input(person[],const int);
+void output(const person[],const int);
+int main()
+{
+	person allone[100];
+	int total;
+	cin>>total;
+	input(allone,total);
+	output(allone,total);
+}
+void input(person all[],const int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		cin>>all[i].id;
+		cin>>all[i].name;
+		cin>>all[i].score;
+	}
+}
+void output(const person all[],const int n)
+{
+	int k;
+	cin>>k;
+	for(int i=0;i<n;i++)
+		if(all[i].score>=k)
+			cout<<all[i].id<<" "<<all[i].name<<" "<<all[i].score<<endl;
+}
+
+
+
+
+
+
+
+建立有序链表。为该有序链表中插入值，插值结束后链表仍然有序。
+#include<iostream>
+using namespace std;
+struct list
+{
+	int a;
+	list *next;
+};
+void input(list *&head,int n)
+{
+	list *p,*s;
+	s=new list;
+	for(int i=1;i<=n;i++)
+	{
+		cin>>s->a;
+		if(head==NULL)
+			head=s;
+		else
+			p->next=s;
+		p=s;
+		s=new list;	
+	}
+	p->next=NULL;
+}
+void in(list *&head,int num)
+{
+	list *s,*p,*h;
+	s=new list;
+	s->a=num;
+	s->next=NULL;
+	if(head==NULL)
+	{
+		head=s;
+		return;
+	}
+	if(head->a>s->a)
+	{
+		s->next=head;
+		head=s;
+		return;
+	}
+	for(h=head,p=head->next;p;h=p,p=p->next)
+		if(p->a>s->a)
+		{
+			s->next=p;
+			h->next=s;
+			return;
+		}
+		h->next=s;
+		return;
+}
+void output(list *head)
+{
+	while(head)
+	{
+		cout<<head->a<<" ";
+		head=head->next;
+	}
+	cout<<endl;
+}
+int main()
+{
+	list*head=NULL;
+	int x,k;
+	cin>>x;
+	input(head,x);
+	cin>>k;
+	in(head,k);
+	output(head);
+}
+
+
+
+
+
+
+题目描述现有有N个学生的数据记录，每个记录包括学号、姓名、三科成绩。 编写一个函数input,用来输入一个学生的数据记录。 编写一个函数print,打印一个学生的数据记录。 在主函数调用这两个函数，读取N条记录输入，再按要求输出。 N<100输入学生数量N占一行 每个学生的学号、姓名、三科成绩占一行，空格分开。输出每个学生的学号、姓名、三科成绩占一行，逗号分开。#include<iostream>#include<string>using namespace std;
+struct Note
+{	string id;
+	string name;
+	int a;
+	int b;
+	int c;
+	Note *next;
+};
+void input(Note *&head,int n)
+{	Note *p,*s;
+	p=new Note;
+	for(int i=1;i<=n;i++)
+	{
+		cin>>p->id;
+		cin>>p->name;
+		cin>>p->a;
+		cin>>p->b;
+		cin>>p->c;
+	    if(head==NULL)
+			head=p;
+		else
+		       s->next=p;
+		s=p;
+		p=new Note;
+	}
+	p->next=NULL;
+}
+void print(const Note *head)
+{
+	while(head)
+	{
+		cout<<head->id<<",";
+		cout<<head->name<<",";
+		cout<<head->a<<",";
+		cout<<head->b<<",";
+		cout<<head->c<<endl;
+		head=head->next;
+	}
+}
+int main()
+{
+	Note *head=NULL;
+	int n;	cin>>n;	input(head,n);
+	print(head);
+}
+
+
+
+
+
+有n人围成一圈，顺序排号。从第1个人开始报数（从1到3报数），凡报到3的人退出圈子，问最后留下的是原来的第几号的那位。
+#include<iostream>
+using namespace std;
+struct note
+{
+	int a;
+	note *next;
+};
+void input(note*&head,int n)
+{
+	note *s;
+	s=new note;
+	head=s;
+	for(int i=1;i<=n;i++)
+	{
+		s->a=i;
+		if(i<n)
+		{
+			s->next=new note;
+			s=s->next;
+		}
+	}
+	s->next=head;
+}
+void output(note *&head)
+{
+	note *p,*s;
+	p=head;
+	s=head;
+	while(p!=p->next)
+	{
+		for(int i=1;i<3;i++)
+		{	s=p;
+		    p=p->next;
+		}
+		s->next=p->next;
+		delete p;
+		p=NULL;
+		p=s->next;
+	}
+	cout<<p->a;
+}
+int main()
+{
+	note *head;
+	int n;
+	cin>>n;
+	input(head,n);
+	output(head);
+}
+
+
+
+
+
+
+
+
+
+
+题目描述
+各位acmer，你们知道OJ评测系统是如何对我们本次比赛排名的吗？ acm参赛队员排名是根据ac题目的数量和总用时来排名的。也就是说，解题的数目越多名次越靠前，如果解题数目相等，那么用时少的名次就靠前。
+输入
+输入正整数n(0<n<1000),表示有n支队伍参加比赛，接下来有n行输入，每行包括两个数a,b(0<=a<=10,0<b<=300)。这n行中第i行的a,b分别表示第i支队伍的解题数量和总用时。（注意：输入的测试用例有多组） 
+输出
+为这次比赛排一下名次，按名次从前到后输出各支队伍的序号。(如果有两支队伍的解题数目和总用时都一样，则他们的顺序不颠倒！)
+#include<iostream>
+using namespace std;
+struct Note
+{
+	int id;
+	int num;
+	int time;
+	Note *next;
+};
+void input(Note *&head,int n)
+{
+	Note *s,*p;
+	s=new Note;
+	for(int i=1;i<=n;i++)
+	{
+		s->id=i;
+		cin>>s->num;
+		cin>>s->time;
+		if(head==NULL)
+			head=s;
+		else
+			p->next=s;
+		p=s;
+		s=new Note;
+	}
+	p->next=NULL;
+}
+void list(Note *&head,int n)
+{
+	Note *s;
+	int x;
+	for(int i=1;i<n;i++)
+	{
+		s=head;
+		for(int j=0;j<n-i;j++)
+		{
+			if(s->num<s->next->num)
+			{
+				x=s->id;
+				s->id=s->next->id;
+				s->next->id=x;
+				x=s->num;
+				s->num=s->next->num;
+				s->next->num=x;
+				x=s->time;
+				s->time=s->next->time;
+				s->next->time=x;
+			}
+			else if(s->num==s->next->num)
+				if(s->time>s->next->time)
+				{
+					x=s->id;
+				    s->id=s->next->id;
+				    s->next->id=x;
+				    x=s->num;
+				    s->num=s->next->num;
+				    s->next->num=x;
+				    x=s->time;
+				    s->time=s->next->time;
+				    s->next->time=x;
+				}
+			s=s->next;
+		}
+	}
+}
+void print(Note *head,int n)
+{
+	int i=1;
+	while(head)
+	{
+		cout<<head->id;
+		if(i!=n)
+			cout<<" ";
+		i++;
+		head=head->next;
+	}
+}
+int main()
+{
+	
+	int n;
+	while(cin>>n)
+	{
+		Note *head=NULL;
+		input(head,n);
+	    list(head,n);
+	    print(head,n);
+		cout<<endl;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+题目描述
+输入两行整数数据，构造为两个有序链表，将其合并为一个有序链表输出。
+要求：链表中的数据均为正整数，当输入0或负数时，表示链表结束。
+输入
+两行数据：
+每行若干个数据，以0结束，各个数据间以空格分开。
+输出
+三行数据： 第一行：第一个有序链表。
+第二行：第二个有序链表。
+第三行：合并后的有序链表。
+样例输入
+3 1 9 5 0 
+7 4 2 9 8 3 16 0 
+样例输出
+1 3 5 9 (后有空格)
+2 3 4 7 8 9 16 (后有空格)
+1 2 3 3 4 5 7 8 9 9 16 (后有空格)
+#include<iostream>  
+using namespace std;  
+static int n1,n2,a[100];  
+struct note1  
+{  
+    int id1;  
+    note1 *next1;  
+};  
+struct note2  
+{  
+    int id2;  
+    note2 *next2;  
+};  
+/*  
+void input1(note1*&head1)  
+{ note1*s,*p;  
+   s=new note1;    
+   for(n1=1;;n1++)  
+   { cin>>s->id1;       
+   if(s->id1==0)  
+       break;  
+     if(head1==NULL)  
+         head1=s;        
+     else p->next1=s;       
+     p=s;                  
+     s=new note1;           
+   }  
+   p->next1=NULL;  
+}  
+*/
+void input1(note1 * & head1)  
+{   
+    int n;  
+    n1=0;  
+    note1 * p, *e;  
+    while(1)  
+    {  
+        cin>>n;  
+        if (n==0)  
+            break;  
+        else
+        {  
+            n1++;  
+            p = new note1;  
+            p->id1    = n;  
+            p->next1 = NULL;  
+            if (head1==NULL)  
+            {  
+                head1 = p;  
+                e = p;  
+            }  
+            else
+            {  
+                e->next1 = p;  
+                e = p;  
+            }  
+        }  
+    }  
+}  
+void input2(note2 * & head2)  
+{   
+    int n;  
+    n2=0;  
+    note2 * p, *e;  
+    while(1)  
+    {  
+        cin>>n;  
+        if (n==0)  
+            break;  
+        else
+        {  
+            n2++;  
+            p = new note2;  
+            p->id2    = n;  
+            p->next2 = NULL;  
+            if (head2==NULL)  
+            {  
+                head2 = p;  
+                e = p;  
+            }  
+            else
+            {  
+                e->next2 = p;  
+                e = p;  
+            }  
+        }  
+    }  
+}  
+/*  
+void input2(note2*&head2)  
+{  
+    note2*s,*p;  
+    s=new note2;  
+    for(n2=1;;n2++)  
+    {  
+        cin>>s->id2;  
+        if(s->id2==0)  
+            break;  
+        if(head2==NULL)  
+            head2=s;  
+        else  
+            p->next2=s;  
+            p=s;  
+            s=new note2;  
+    }  
+    p->next2=NULL;  
+}  
+*/
+void sort1(note1 *&head1)  
+{  
+    note1 *s;  
+    int x;  
+    for(int i=1;i<n1;i++)  
+    {  
+        s=head1;  
+        for(int j=0;j<n1-i;j++)  
+        {  
+            if(s->id1>s->next1->id1)  
+            {  
+                x=s->id1;  
+                s->id1=s->next1->id1;  
+                s->next1->id1=x;  
+            }  
+            s=s->next1;  
+        }  
+    }  
+}  
+void sort2(note2 *&head2)  
+{  
+    note2 *s;  
+    int x;  
+    for(int i=1;i<n2;i++)  
+    {  
+        s=head2;  
+        for(int j=0;j<n2-i;j++)  
+        {  
+            if(s->id2>s->next2->id2)  
+            {  
+                x=s->id2;  
+                s->id2=s->next2->id2;  
+                s->next2->id2=x;  
+            }  
+            s=s->next2;  
+        }  
+    }  
+}  
+void output1(note1*&head1)  
+{  
+    note1 *s;  
+    s=head1;  
+    for(int i=1;i<=n1;i++)  
+    {  
+        a[i]=s->id1;  
+        cout<<s->id1<<" ";  
+        s=s->next1;  
+    }  
+    cout<<endl;  
+}  
+void output2(note2*&head2)  
+{  
+    note2 *s;  
+    s=head2;  
+    for(int i=1;i<=n2;i++)  
+    {  
+        cout<<s->id2<<" ";  
+        s=s->next2;  
+    }  
+    cout<<endl;  
+}  
+void allsort(note2 *&head2)  
+{  
+    note2 *s,*p,*q;  
+    s=head2;  
+    q=head2;  
+    int j=1,i;  
+    if(a[1]<head2->id2)  
+            {  
+                p=new note2;  
+                p->id2=a[1];  
+                p->next2=head2;  
+                head2=p;  
+                j=2;  
+            }  
+    for(;j<=n1;j++)  
+    {  
+        s=head2;  
+        q=head2;  
+        for(i=1;i<=n2+j-1;i++)  
+        {  
+            q=s;  
+            s=s->next2;  
+            if(i==n2+j-1)  
+            {
+				p=new note2;
+				p->id2=a[j];
+                q->next2=p;
+				p->next2=s;
+				break;
+            }  
+            if(a[j]<=s->id2)  
+            {  
+                p=new note2;  
+                p->id2=a[j];  
+                q->next2=p;  
+                p->next2=s;  
+                break;  
+            }  
+        }  
+    }  
+}  
+void outallsort(note2*&head2)  
+{  
+    for(int i=1;i<=n1+n2;i++)  
+    {  
+        cout<<head2->id2<<" ";  
+        head2=head2->next2;  
+    }  
+}  
+int main()  
+{  
+        
+    note1 *head1=NULL;  
+    note2 *head2=NULL;  
+    input1(head1);  
+    input2(head2);  
+    sort1(head1);  
+    sort2(head2);  
+    output1(head1);  
+    output2(head2);  
+    allsort(head2);  
+    outallsort(head2);  
+}  
+  
+
+
+
+
+
+
+
+在一个n*n的方阵中(n<=10)，"."表示空地(可放置炮台的位置)，"X"表示墙体(不可放置炮台)，炮台会横向，纵向同时开火，直到超出方阵或遇到墙体停下(炮台炮弹不可以穿过墙体)，在该方阵中最多可以放置m个炮台同时使其不会互相进入攻击范围(即所有炮台都是安全的，不会进入其它炮台的攻击范围)。
+多组输入。
+输入：n  表示n*n的方阵,输入0结束
+接下来n行输入表示方阵内容
+输出：可以安全的放置最多的炮台数量m
+Sample Input
+4
+.X..
+....
+XX..
+....
+2
+XX
+.X
+3
+.X.
+X.X
+.X.
+3
+...
+.XX
+.XX
+4
+....
+....
+....
+....
+0
+Sample Output
+5
+1
+5
+2
+4
+#include<iostream>
+using namespace std;
+int main()
+{
+    char a[10][10],b[10][10],c[10][10],d[10][10];
+    int n,s=0,x,m,y;
+    while(cin>>n)
+    {
+        if(n==0)
+            break;
+        s=0;
+        x=0;
+        m=0;
+        y=0;
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+        {
+            cin>>a[i][j];
+            b[i][j]=a[i][j];
+            c[i][j]=a[i][j];
+            d[i][j]=a[i][j];
+        }
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+        {
+            if(a[i][j]=='.')
+            {
+                s++;
+                for(int k=j;k<n;k++)
+                {
+                    if(a[i][k]!='X')
+                    {
+                      a[i][k]='*';
+                    }
+                    if(a[i][k]=='X')
+                        break;
+                }
+                for(int k=i;k<n;k++)
+                {
+                    if(a[k][j]!='X')
+                    {
+                    a[k][j]='*';
+                    }
+                    if(a[k][j]=='X')
+                        break;
+                }
+            }
+ 
+        }
+        for(int i=n-1;i>=0;i--)
+        for(int j=n-1;j>=0;j--)
+        {
+            if(b[i][j]=='.')
+            {
+                x++;
+                for(int k=j;k>=0;k--)
+                {
+                    if(b[i][k]!='X')
+                    {
+                      b[i][k]='*';
+                    }
+                    if(b[i][k]=='X')
+                        break;
+                }
+                for(int k=i;k>=0;k--)
+                {
+                    if(b[k][j]!='X')
+                    {
+                      b[k][j]='*';
+                    }
+                    if(b[k][j]=='X')
+                        break;
+                }
+            }
+ 
+        }
+        for(int i=n-1;i>=0;i--)
+        for(int j=0;j<n;j++)
+        {
+            if(c[i][j]=='.')
+            {
+                m++;
+                for(int k=j;k<n;k++)
+                {
+                    if(c[i][k]!='X')
+                    {
+                      c[i][k]='*';
+                    }
+                    if(c[i][k]=='X')
+                        break;
+                }
+                for(int k=i;k>=0;k--)
+                {
+                    if(c[k][j]!='X')
+                    {
+                      c[k][j]='*';
+                    }
+                    if(c[k][j]=='X')
+                        break;
+                }
+            }
+ 
+        }
+        for(int i=0;i<n;i++)
+        for(int j=n-1;j>=0;j--)
+        {
+            if(d[i][j]=='.')
+            {
+                y++;
+                for(int k=j;k>=0;k--)
+                {
+                    if(d[i][k]!='X')
+                    {
+                      d[i][k]='*';
+                    }
+                    if(d[i][k]=='X')
+                        break;
+                }
+                for(int k=i;k<n;k++)
+                {
+                    if(d[k][j]!='X')
+                    {
+                      d[k][j]='*';
+                    }
+                    if(d[k][j]=='X')
+                        break;
+                }
+            }
+ 
+        }
+        int max=s;
+        if(x>max)
+            max=x;
+        if(y>max)
+            max=y;
+        if(m>max)
+            max=m;
+        cout<<max<<endl;
+    }
+}
+
+
+
+
+
+
+
+?建立一个链表，每个节点包括：学号、姓名、年龄。输入一个年龄，如果链表中的节点所包含的年龄等于此年龄，则删除此节点。
+Input
+ 输入第一行为一个整数N，代表学生的个数，（N<10000）；
+       第二行至第N+1行为学生星系，每行为一个完整的学生信息，学号为正整数，名字为小于10个字节的字母组成，年龄为整数；
+    第N+2行输入年龄；
+Output
+删除年龄等于输入年龄的所有节点，并将剩余节点按照原序输出，每行为一个学生的信息（学号，姓名，年龄）
+Sample Input
+6
+1 张三 20
+2 李四 21
+3 王五 20
+4 马六 22
+5 赵一 23
+6 王七 25
+20
+Sample Output
+2 李四 21
+4 马六 22
+5 赵一 23
+6 王七 25
+
+#include<iostream>
+#include<string>
+using namespace std;
+struct List
+{
+    int number;
+    string name;
+    int age;
+    List* next;
+};
+void input(List* &head,int);
+void output(List* &head,int);
+int main()
+{
+    int total;
+    cin>>total;
+    List *head=NULL;
+    input(head,total);
+    output(head,total);
+}
+void input(List* &head,int total)
+{
+    List *s,*p;
+    s=new List;
+    s->next=NULL;
+    if(head==NULL)
+        head=s;
+    for(int i=0;i<total;i++)
+    {
+        cin>>s->number;
+        cin>>s->name;
+        cin>>s->age;
+        p=new List;
+        s->next=p;
+        s=s->next;
+    }
+    s=NULL;
+    delete p;
+}
+void output(List*&head,int total)
+{
+    int num;
+    cin>>num;
+    List *s,*p;
+    s=head;
+    for(int i=0;i<total;i++)
+    {
+        if(s->age!=num)
+        {
+            cout<<s->number<<" "<<s->name<<" "<<s->age<<endl;
+            s=s->next;
+        }
+        else
+            s=s->next;
+    }
+}
+
+
+
+
+
+
+
+Description
+已知链表结构如下：
+struct node 
+{
+	int data;
+	node * next;
+};
+链表在初始情况共三个节点，即head->（3）->（7）->（1）。
+程序运行后，首先输出当前链表的数据（各数据间以空格隔开）并换行。
+接下来，可对链表进行操作处理，处理方式为“操作码+节点序号”。
+其中操作码有三种形式，包括：1、在指定节点后增加默认值为0的新节点；2、指定节点的数据值自增1；3、删除指定节点。当操作码为0时，退出程序。
+每次执行完操作后，输出链表内容并换行，链表各数据间以空格隔开。
+Input
+Output
+Sample Input
+1 2
+2 1
+3 2
+0
+Sample Output
+3 7 1
+3 7 0 1
+4 7 0 1
+4 0 1
+
+#include<iostream>
+#include<string>
+using namespace std;
+struct List
+{
+    int number;
+    List* next;
+};
+void input(List* &head);
+void deal1(List* &head,int&);
+void deal2(List* &head,int&);
+void deal3(List* &head,int&);
+void output(List* &head,int&);
+int main()
+{
+    int command;
+    int all=3;
+    List *head=NULL;
+    input(head);
+    output(head,all);
+    while(cin>>command)
+    {
+        if(command==1)
+            deal1(head,all);
+        if(command==2)
+            deal2(head,all);
+        if(command==3)
+            deal3(head,all);
+        if(command==0)
+            break;
+    }
+}
+void input(List* &head)
+{
+    List *s,*p;
+    s=new List;
+    s->next=NULL;
+    if(head==NULL)
+        head=s;
+    s->number=3;
+    p=new List;
+    s->next=p;
+    s=s->next;
+    s->number=7;
+    p=new List;
+    s->next=p;
+    s=s->next;
+    s->number=1;
+    s->next=NULL;
+ 
+}
+void deal1(List*&head,int&all)
+{
+    int ages;
+    cin>>ages;
+    List *s,*p;
+    p=new List;
+    s=head;
+    if(ages==0)
+        {
+            p->next=head;
+            head=p;
+            p->number=0;
+            goto A;
+        }
+    for(int i=1;i<ages;i++)
+        s=s->next;
+    p->next=s->next;
+    s->next=p;
+    p->number=0;
+A:  all++;
+    output(head,all);
+}
+void deal2(List*&head,int&all)
+{
+    int num;
+    cin>>num;
+    List*s;
+    s=head;
+    for(int i=1;i<num;i++)
+    {
+        s=s->next;
+    }
+    s->number++;
+    output(head,all);
+}
+void deal3(List*&head,int&all)
+{
+    int num;
+    cin>>num;
+    List *s,*p;
+    s=head;
+    p=new List;
+    if(num==1)
+        {
+            head=head->next;
+            s=s->next;
+            goto B;
+        }
+    for(int i=1;i<num;i++)
+    {
+            p=s;
+            s=s->next;
+    }
+    p->next=s->next;
+    delete s;
+B:  all--;
+    output(head,all);
+}
+void output(List* &head,int&all)
+{
+    List *s;
+    s=head;
+    for(int i=0;i<all;i++)
+    {
+        cout<<s->number;
+        if(i!=all-1)
+            cout<<" ";
+        else
+            cout<<endl;
+        s=s->next;
+    }
+}
+
+
+
+
+
+
+建立有序链表并输出结果
+Input
+输入若干数字,以0结束
+Output
+输出链表内容
+Sample Input
+5 1 4 3 2 0
+Sample Output
+1 2 3 4 5 
+#include<iostream>
+#include<string>
+using namespace std;
+struct List
+{
+    int number;
+    List* next;
+};
+void input(List* &head,int&);
+void deal(List* &head,int);
+void output(List* &head,int);
+int main()
+{
+    int total=0;
+    List *head=NULL;
+    input(head,total);
+    deal(head,total);
+    output(head,total);
+}
+void input(List* &head,int &total)
+{
+    List *s,*p;
+    s=new List;
+    s->next=NULL;
+    if(head==NULL)
+        head=s;
+    for(;;)
+    {
+        cin>>s->number;
+        if(s->number==0)
+            break;
+        total++;
+        p=new List;
+        s->next=p;
+        s=s->next;
+    }
+    s->next=NULL;
+    delete p;
+}
+void deal(List*&head,int total)
+{
+    int ages;
+    List *s;
+    for(int i=1;i<total;i++)
+    {
+        s=head;
+        for(int j=i;j<total;j++)
+    {
+        if(s->number>s->next->number)
+        {
+             
+             
+            ages=s->number;
+            s->number=s->next->number;
+            s->next->number=ages;
+            s=s->next;
+        }
+        else
+            s=s->next;
+    }
+    }
+}
+void output(List* &head,int total)
+{
+    List *s;
+    s=head;
+    for(int i=0;i<total;i++)
+    {
+        cout<<s->number<<" ";
+        s=s->next;
+    }
+    cout<<endl;
+}
+
+
+
+
+
+
+
+
+补充复数的运算代码。已有复数类的描述如下：
+class complex
+{
+double real;
+double imag;
+public:
+complex(double r=0,double i=0) {real=r;imag = i;}
+void set(double r,double i) {real=r;imag = i;}
+void show();
+void show_add(complex x);
+void show_sub(complex x);
+void show_mul(complex x);
+};
+.....
+ 
+程序运行时首先根据输入的操作码选择四种操作之一，即1：两个复数相加并显示；2、两个复数相减并显示；3、两个复数相乘并显示；0、退出程序。
+对于前三种操作，分别输入两个复数的实部和虚部值（数据间以空格隔开），先输出a、b各自的值，然后进行相应计算并输出结果。具体格式范例。
+Input
+Output
+Sample Input
+1
+2.3 4 3 -5
+2
+1 0 1 1
+3
+1 2 2 1
+2 
+0 1 0 0
+0
+Sample Output
+(a):2.3+4i
+(b):3-5i
+(+):5.3-i
+(a):1
+(b):1+i
+(-):-i
+(a):1+2i
+(b):2+i
+(*):5i
+(a):i
+(b):0
+(-):i
+#include<iostream>
+using namespace std;
+class complex
+{
+    double real1;
+    double imag1;
+    double real2;
+    double imag2;
+public:
+    complex() {real1=0;imag1=0;real2=0;imag2=0;}
+    void input();
+    void show();
+    void deal(double a,double b,char op);
+    void show_add();
+    void show_sub();
+    void show_mul();
+};
+int main()
+{
+    complex num;
+    int spy;
+    while(cin>>spy)
+    {
+        if(spy==0)
+            break;
+        num.input();
+        if(spy==1)
+            num.show_add();
+        if(spy==2)
+            num.show_sub();
+        if(spy==3)
+            num.show_mul();
+          
+    }
+}
+void complex::input()
+{
+    cin>>real1;
+    cin>>imag1;
+    cin>>real2;
+    cin>>imag2;
+}
+void complex::show()
+{
+    if(real1!=0&&real2!=0&&imag1>0&&imag2>0&&imag1!=1&&imag2!=1)//1
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1<0&&imag2<0&&imag1!=-1&&imag2!=-1)//2
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1<0&&imag2>0&&imag1!=-1&&imag2!=1)//3
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1>0&&imag2<0&&imag1!=1&&imag2!=-1)//4
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+     else if(real1!=0&&real2!=0&&imag1>0&&imag2==1&&imag1!=1)//5
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1<0&&imag2==1&&imag1!=-1)//6
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1>0&&imag2==-1&&imag1!=1)//7
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"-"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1<0&&imag2==-1&&imag1!=-1)//8
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"-"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1>0&&imag2==0&&imag1!=1)//9
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1<0&&imag2==0&&imag1!=-1)//10
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+     else if(real1!=0&&real2!=0&&imag2>0&&imag1==1&&imag2!=1)//11
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+     else if(real1!=0&&real2!=0&&imag2<0&&imag1==1&&imag2!=-1)//12
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+      else if(real1!=0&&real2!=0&&imag2>0&&imag1==-1&&imag2!=1)//13
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+     else if(real1!=0&&real2!=0&&imag2<0&&imag1==-1&&imag2!=-1)//14
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+       else if(real1!=0&&real2!=0&&imag2>0&&imag1==0&&imag2!=1)//15
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+     else if(real1!=0&&real2!=0&&imag2<0&&imag1==0&&imag2!=-1)//16
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1==0&&imag2==0)//17
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1==0&&imag2==1)//18
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<real2<<"+"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1==0&&imag2==-1)//19
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<real2<<"-"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1==1&&imag2==0)//20
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1==-1&&imag2==0)//21
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1==-1&&imag2==1)//22
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<real2<<"+i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1==-1&&imag2==-1)//23
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<real2<<"-i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1==1&&imag2==1)//24
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<real2<<"+i"<<endl;
+    }
+    else if(real1!=0&&real2!=0&&imag1==1&&imag2==-1)//25
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<real2<<"-i"<<endl;
+    }
+    if(real1==0&&real2!=0&&imag1>0&&imag2>0&&imag1!=1&&imag2!=1)//1
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1<0&&imag2<0&&imag1!=-1&&imag2!=-1)//2
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1<0&&imag2>0&&imag1!=-1&&imag2!=1)//3
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1>0&&imag2<0&&imag1!=1&&imag2!=-1)//4
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+     else if(real1==0&&real2!=0&&imag1>0&&imag2==1&&imag1!=1)//5
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1<0&&imag2==1&&imag1!=-1)//6
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1>0&&imag2==-1&&imag1!=1)//7
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"-"<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1<0&&imag2==-1&&imag1!=-1)//8
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<"-"<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1>0&&imag2==0&&imag1!=1)//9
+    {
+        cout<<"(a):"<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1<0&&imag2==0&&imag1!=-1)//10
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+     else if(real1==0&&real2!=0&&imag2>0&&imag1==1&&imag2!=1)//11
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+     else if(real1==0&&real2!=0&&imag2<0&&imag1==1&&imag2!=-1)//12
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+      else if(real1==0&&real2!=0&&imag2>0&&imag1==-1&&imag2!=1)//13
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+     else if(real1==0&&real2!=0&&imag2<0&&imag1==-1&&imag2!=-1)//14
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+       else if(real1==0&&real2!=0&&imag2>0&&imag1==0&&imag2!=1)//15
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<real2<<"+"<<imag2<<"i"<<endl;
+    }
+     else if(real1==0&&real2!=0&&imag2<0&&imag1==0&&imag2!=-1)//16
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<real2<<imag2<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1==0&&imag2==0)//17
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1==0&&imag2==1)//18
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<real2<<"+"<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1==0&&imag2==-1)//19
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<real2<<"-"<<"i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1==1&&imag2==0)//20
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1==-1&&imag2==0)//21
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<real2<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1==-1&&imag2==1)//22
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<real2<<"+i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1==-1&&imag2==-1)//23
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<real2<<"-i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1==1&&imag2==1)//24
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<real2<<"+i"<<endl;
+    }
+    else if(real1==0&&real2!=0&&imag1==1&&imag2==-1)//25
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<real2<<"-i"<<endl;
+    }
+    if(real1!=0&&real2==0&&imag1>0&&imag2>0&&imag1!=1&&imag2!=1)//1
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1<0&&imag2<0&&imag1!=-1&&imag2!=-1)//2
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1<0&&imag2>0&&imag1!=-1&&imag2!=1)//3
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1>0&&imag2<0&&imag1!=1&&imag2!=-1)//4
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+     else if(real1!=0&&real2==0&&imag1>0&&imag2==1&&imag1!=1)//5
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1<0&&imag2==1&&imag1!=-1)//6
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1>0&&imag2==-1&&imag1!=1)//7
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"-"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1<0&&imag2==-1&&imag1!=-1)//8
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"-"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1>0&&imag2==0&&imag1!=1)//9
+    {
+        cout<<"(a):"<<real1<<"+"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1<0&&imag2==0&&imag1!=-1)//10
+    {
+        cout<<"(a):"<<real1<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+     else if(real1!=0&&real2==0&&imag2>0&&imag1==1&&imag2!=1)//11
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+     else if(real1!=0&&real2==0&&imag2<0&&imag1==1&&imag2!=-1)//12
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+      else if(real1!=0&&real2==0&&imag2>0&&imag1==-1&&imag2!=1)//13
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+     else if(real1!=0&&real2==0&&imag2<0&&imag1==-1&&imag2!=-1)//14
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+       else if(real1!=0&&real2==0&&imag2>0&&imag1==0&&imag2!=1)//15
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+     else if(real1!=0&&real2==0&&imag2<0&&imag1==0&&imag2!=-1)//16
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1==0&&imag2==0)//17
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1==0&&imag2==1)//18
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1==0&&imag2==-1)//19
+    {
+        cout<<"(a):"<<real1<<endl;
+        cout<<"(b):"<<"-"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1==1&&imag2==0)//20
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1==-1&&imag2==0)//21
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1==-1&&imag2==1)//22
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1==-1&&imag2==-1)//23
+    {
+        cout<<"(a):"<<real1<<"-i"<<endl;
+        cout<<"(b):"<<"-i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1==1&&imag2==1)//24
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1!=0&&real2==0&&imag1==1&&imag2==-1)//25
+    {
+        cout<<"(a):"<<real1<<"+i"<<endl;
+        cout<<"(b):"<<"-i"<<endl;
+    }
+    if(real1==0&&real2==0&&imag1>0&&imag2>0&&imag1!=1&&imag2!=1)//1
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1<0&&imag2<0&&imag1!=-1&&imag2!=-1)//2
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1<0&&imag2>0&&imag1!=-1&&imag2!=1)//3
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1>0&&imag2<0&&imag1!=1&&imag2!=-1)//4
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+     else if(real1==0&&real2==0&&imag1>0&&imag2==1&&imag1!=1)//5
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1<0&&imag2==1&&imag1!=-1)//6
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1>0&&imag2==-1&&imag1!=1)//7
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"-"<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1<0&&imag2==-1&&imag1!=-1)//8
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"-"<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1>0&&imag2==0&&imag1!=1)//9
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1<0&&imag2==0&&imag1!=-1)//10
+    {
+        cout<<"(a):"<<imag1<<"i"<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+     else if(real1==0&&real2==0&&imag2>0&&imag1==1&&imag2!=1)//11
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+     else if(real1==0&&real2==0&&imag2<0&&imag1==1&&imag2!=-1)//12
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+      else if(real1==0&&real2==0&&imag2>0&&imag1==-1&&imag2!=1)//13
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+     else if(real1==0&&real2==0&&imag2<0&&imag1==-1&&imag2!=-1)//14
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+       else if(real1==0&&real2==0&&imag2>0&&imag1==0&&imag2!=1)//15
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+     else if(real1==0&&real2==0&&imag2<0&&imag1==0&&imag2!=-1)//16
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<imag2<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1==0&&imag2==0)//17
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1==0&&imag2==1)//18
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1==0&&imag2==-1)//19
+    {
+        cout<<"(a):"<<"0"<<endl;
+        cout<<"(b):"<<"-"<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1==1&&imag2==0)//20
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1==-1&&imag2==0)//21
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<"0"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1==-1&&imag2==1)//22
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1==-1&&imag2==-1)//23
+    {
+        cout<<"(a):"<<"-i"<<endl;
+        cout<<"(b):"<<"-i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1==1&&imag2==1)//24
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<"i"<<endl;
+    }
+    else if(real1==0&&real2==0&&imag1==1&&imag2==-1)//25
+    {
+        cout<<"(a):"<<"i"<<endl;
+        cout<<"(b):"<<"-i"<<endl;
+    }
+}
+void complex::deal(double a,double b,char op)
+{
+    if(a!=0&&b!=0&&b!=1&&b>0)
+        cout<<"("<<op<<"):"<<a<<"+"<<b<<"i"<<endl;
+    else if(a!=0&&b!=0&&b!=-1&&b<0)
+        cout<<"("<<op<<"):"<<a<<b<<"i"<<endl;
+    else if(a!=0&&b==0)
+        cout<<"("<<op<<"):"<<a<<endl;
+    else if(a!=0&&b==1)
+        cout<<"("<<op<<"):"<<a<<"+i"<<endl;
+    else if(a!=0&&b==-1)
+        cout<<"("<<op<<"):"<<a<<"-i"<<endl;
+    else if(a==0&&b!=0&&b!=1&&b!=-1)
+        cout<<"("<<op<<"):"<<b<<"i"<<endl;
+    else if(a==0&&b==0)
+        cout<<"("<<op<<"):"<<"0"<<endl;
+    else if(a==0&&b==1)
+        cout<<"("<<op<<"):"<<"i"<<endl;
+    else if(a==0&&b==-1)
+        cout<<"("<<op<<"):"<<"-i"<<endl;
+}
+void complex::show_add()
+{
+    char op='+';
+    show();
+    double a,b;
+    a=real1+real2;
+    b=imag1+imag2;
+    deal(a,b,op);
+}
+void complex::show_sub()
+{
+    char op='-';
+    show();
+    double a,b;
+    a=real1-real2;
+    b=imag1-imag2;
+    deal(a,b,op);
+}
+void complex::show_mul()
+{
+    char op='*';
+    show();
+    double a,b;
+    a=real1*real2-imag1*imag2;
+    b=real1*imag2+real2*imag1;
+    deal(a,b,op);
+}
+
+
+
+
+
+
+
+escription
+定义简单的个人所得税类
+
+数据成员（全部私有）包括：姓名，年月，薪水
+
+成员函数（全部公有）包括：
+
+1、input()用于输入本对象姓名，年月，薪水
+
+2、show()用于输出本对象的姓名，年月，薪水以及税额，（假设税额公式为：800以下部分免征，800以上部分征税10%）
+
+假设本公司共有5人，在主函数中定义长度为5的类类型数组a，使用循环调用a[i].input()，输入5人信息，再使用循环调用a[i].show()，输出5人信息。
+
+Input
+输入5人信息
+
+Output
+输出5人信息
+
+Sample Input
+xiaowang 201702 500
+xiaozhang 201702 1000
+xiaoli 201702 0
+xiaoliu 201702 900
+xiaozhu 201702 800
+Sample Output
+xiaowang 201702 500 0
+xiaozhang 201702 1000 20
+xiaoli 201702 0 0
+xiaoliu 201702 900 10
+xiaozhu 201702 800 0
+
+#include<iostream>
+using namespace std;
+#include<string>
+class Person
+{
+private:
+    string name;
+    int date;
+    int salary;
+    int tax;
+public:
+    void input();
+    void show();
+};
+int main()
+{
+    Person all[5];
+    for(int i=0;i<5;i++)
+        all[i].input();
+    for(int i=0;i<5;i++)
+        all[i].show();
+}
+void Person::input()
+{
+    cin>>name;
+    cin>>date;
+    cin>>salary;
+}
+void Person::show()
+{
+    if(salary>800)
+        tax=(salary-800)*0.1;
+    else
+        tax=0;
+    cout<<name<<" "<<date<<" "<<salary<<" "<<tax<<endl;
+}
+
+
+
+
+
+
+Description
+#include<iostream>
+#include<cstring>
+using namespace std;
+class  Name
+{ public :
+	Name( char  *pN ) ;
+	Name operator=(Name ) ;
+	~ Name() ;
+	char  *pName ;
+} ;
+int main()
+{ 	int i;
+        cin>>i;
+        if(i==0) return 0;
+        Name Obj1("ZhangSan") ;
+	Name Obj3("Noname") ;
+	Obj3 = Obj1 ;		
+	return 0;
+}
+Name::Name ( char  *pN )
+{ 	cout <<"   Constructing  " << pN <<" "<< endl ;
+        pName = new char[ strlen( pN ) + 1 ] ;
+        if( pName != 0 ) strcpy( pName,pN ) ;
+}
+Name Name::operator= (Name Obj )	 
+{ 	delete  []pName ;
+	pName = new char[ strlen( Obj.pName ) + 1 ] ;
+	if ( pName != 0 ) strcpy( pName , Obj.pName ) ;
+	return *this ;
+}
+Name::~ Name()
+{ 	cout << "   Destructing   " << pName <<"  "<< endl ;
+	pName[0] = '\0' ;
+	delete  []pName ;
+}
+上述程序中含有内存错误，原因在于复制构造函数的缺失。请填写复制构造函数，完成深复制。注意，复制构造函数中不需要任何输出信息。
+Input
+根据程序要求输入
+
+Output
+根据上述程序进行输出，注意，复制构造函数中不需要任何输出信息。
+#include<iostream>
+#include<cstring>
+using namespace std;
+class  Name
+{ public :
+    Name( char  *pN ) ;
+    Name(const Name&Obj);
+    Name operator=(Name ) ;
+    ~ Name() ;
+    char  *pName ;
+} ;
+int main()
+{   int i;
+        cin>>i;
+        if(i==0) return 0;
+        Name Obj1("ZhangSan") ;
+    Name Obj3("Noname") ;
+    Obj3 = Obj1 ;       
+    return 0;
+}
+Name::Name ( char  *pN )
+{   cout <<"   Constructing  " << pN <<" "<< endl ;
+        pName = new char[ strlen( pN ) + 1 ] ;
+        if( pName != 0 ) strcpy( pName,pN ) ;
+}
+Name::Name(const Name&Obj)
+{
+    pName=new char[strlen(Obj.pName)+1];
+    if(pName!=0)
+        strcpy(pName,Obj.pName);
+}
+Name Name::operator= (Name Obj )     
+{   delete  []pName ;
+    pName = new char[ strlen( Obj.pName ) + 1 ] ;
+    if ( pName != 0 ) strcpy( pName , Obj.pName ) ;
+    return *this ;
+}
+Name::~ Name()
+{   cout << "   Destructing   " << pName <<"  "<< endl ;
+    pName[0] = '\0' ;
+    delete  []pName ;
+}
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+void mainFace();
+class Student
+{
+	double score;//分数
+	static double total;//总分
+	static int count;//学生人数
+public:
+	void scoretotalcount(double s);
+	static void sum();
+	static void average();
+};
+double Student::total=0;
+int Student::count=0;
+void Student::scoretotalcount(double s)
+{
+	score=s;
+	total+=score;
+	count++;
+}
+void Student::sum()
+{
+	cout<<"总分: "<<total<<endl;
+}
+void Student::average()
+{
+	cout<<"平均分: "<<total/count<<endl;
+}
+void mainFace()
+{
+	cout<<"1.输入学生成绩"<<endl;
+	cout<<"2.查看总分"<<endl;
+	cout<<"3.查看平均分"<<endl;
+	cout<<"0.退出程序"<endl;
+}
+int main()
+{
+	double s;
+	int command;
+	Student person;
+	mainFace();
+	cout<<"输入指令"<<endl;
+	while(cin>>command)
+	{
+		if(command==0)
+			break;
+		if(command==1)
+		{
+			cout<<"输入分数"<<endl;
+			cin>>s;
+			person.scoretotalcount(s);
+		}
+		if(command==2)
+			person.sum();
+		if(command==3)
+			person.average();
+		cout<<"输入指令"<<endl;
+	}
+}
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+struct Point
+{
+	double x;//横坐标
+	double y;//纵坐标
+};
+class Line
+{
+	double a;
+	double b;
+public:
+	friend void setPoint(Line &l1,Line &l2);
+	void print();
+};
+void Line::print()
+{
+	cout<<"输入a,b"<<endl;
+	cin>>a;
+	cin>>b;
+	if(b>0&&a!=0&&a!=1&&a!=-1)
+		cout<<"直线方程为: y="<<a<<"x+"<<b<<endl;
+	if(b<0&&a!=0&&a!=1&&a!=-1)
+		cout<<"直线方程为: y="<<a<<"x"<<b<<endl;
+	if(b==0&&a!=0&&a!=1&&a!=-1)
+		cout<<"直线方程为: y="<<a<<"x"<<endl;
+	if(a==1&&b==0)
+		cout<<"直线方程为: y="<<"x"<<endl;
+	if(a==10&&b<0)
+		cout<<"直线方程为: y="<<"x"<<b<<endl;
+	if(b>0&&a==1)
+		cout<<"直线方程为: y="<<"x+"<<b<<endl;
+	if(a==0&&b==0)
+		cout<<"直线方程为: y="<<"0"<<endl;
+	if(a==0&&b<0)
+		cout<<"直线方程为: y="<<b<<endl;
+	if(b>0&&a==0)
+		cout<<"直线方程为: y="<<b<<endl;
+	if(a==-1&&b==0)
+		cout<<"直线方程为: y="<<"-x"<<endl;
+	if(a==-1&&b<0)
+		cout<<"直线方程为: y="<<"-x"<<b<<endl;
+	if(b>0&&a==-1)
+		cout<<"直线方程为: y="<<"-x+"<<b<<endl;
+}
+void setPoint(Line &l1,Line&l2)
+{
+	Point point;
+	point.x=(l1.b-l2.b)/(l2.a-l1.a);
+	point.y=l1.a*point.x+l1.b;
+	if(point.x==-0)
+		point.x=0;
+	if(point.y==-0)
+		point.y=0;
+	if(l2.a-l1.a==0)
+	{
+		cout<<"无交点"<<endl;
+			return;
+	}
+	cout<<"两方程交点坐标为: ("<<point.x<<","<<point.y<<")"<<endl;
+}
+int main()
+{
+	Line l1;
+	Line l2;
+	l1.print();
+	l2.print();
+	setPoint(s.line1,s.line2);
+}
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+class Point
+{
+public:
+	double x;//横坐标
+	double y;//纵坐标
+};
+class Line
+{
+	double a;
+	double b;
+public:
+	double pa()
+	{
+		return a;
+	}
+	double pb()
+	{
+		return b;
+	}
+	void print();
+};
+class setPoint
+{
+public:
+	Point point;
+	Line line1;
+	Line line2;	
+	void setPoints(Line &l1,Line &l2);
+};
+void Line::print()
+{
+	cout<<"输入a,b"<<endl;
+	cin>>a;
+	cin>>b;
+	if(b>0&&a!=0&&a!=1&&a!=-1)
+		cout<<"直线方程为: y="<<a<<"x+"<<b<<endl;
+	if(b<0&&a!=0&&a!=1&&a!=-1)
+		cout<<"直线方程为: y="<<a<<"x"<<b<<endl;
+	if(b==0&&a!=0&&a!=1&&a!=-1)
+		cout<<"直线方程为: y="<<a<<"x"<<endl;
+	if(a==1&&b==0)
+		cout<<"直线方程为: y="<<"x"<<endl;
+	if(a==10&&b<0)
+		cout<<"直线方程为: y="<<"x"<<b<<endl;
+	if(b>0&&a==1)
+		cout<<"直线方程为: y="<<"x+"<<b<<endl;
+	if(a==0&&b==0)
+		cout<<"直线方程为: y="<<"0"<<endl;
+	if(a==0&&b<0)
+		cout<<"直线方程为: y="<<b<<endl;
+	if(b>0&&a==0)
+		cout<<"直线方程为: y="<<b<<endl;
+	if(a==-1&&b==0)
+		cout<<"直线方程为: y="<<"-x"<<endl;
+	if(a==-1&&b<0)
+		cout<<"直线方程为: y="<<"-x"<<b<<endl;
+	if(b>0&&a==-1)
+		cout<<"直线方程为: y="<<"-x+"<<b<<endl;
+}
+void setPoint::setPoints(Line &l1,Line&l2)
+{
+	Point point;
+	point.x=(l1.pb()-l2.pb())/(l2.pa()-l1.pa());
+	point.y=l1.pa()*point.x+l1.pb();
+	if(point.x==-0)
+		point.x=0;
+	if(point.y==-0)
+		point.y=0;
+	if(l2.pa()-l1.pa()==0)
+	{
+		cout<<"无交点"<<endl;
+			return;
+	}
+	cout<<"两方程交点坐标为: ("<<point.x<<","<<point.y<<")"<<endl;
+}
+int main()
+{
+	setPoint s;
+	s.line1.print();
+	s.line2.print();
+	s.setPoints(s.line1,s.line2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<iostream>
+#include<string>
+#include<fstream>
+#include<cstdlib>
+using namespace std;
+class Student
+{
+	string name;//姓名
+	string studentNumber;//学号
+	string major;//专业
+	Student *next;
+	int i;
+public:
+	Student *head;
+	Student *s;
+	void mainInterface();//主界面
+	void builds();//初始化i
+	void build();//建立
+	void alter();//修改
+	void find();//查找
+	void remove();//删除
+	void findAll();//查看全部
+	void read_out();//写入文件
+	void read_in();//读入文件
+};
+//主界面
+void Student::mainInterface()
+{
+	cout<<"建立学生信息------------- 1 "<<endl;
+	cout<<"修改学生信息------------- 2 "<<endl;
+	cout<<"查找学生信息------------- 3 "<<endl;
+	cout<<"删除学生信息------------- 4 "<<endl;
+	cout<<"查看全部信息------------- 5 "<<endl;
+	cout<<"退出系统并保存文件------- 0 "<<endl;
+}
+//初始化i
+void Student::builds()
+{
+	i=0;
+}
+//建立
+void Student::build()
+{
+	if(i==0)
+	{
+		
+		s=new Student;
+		head=s;
+	}
+	Student *p;
+	p=new Student;
+	cout<<"请输入学生姓名: ";
+	cin>>p->name;
+	cout<<"请输入学生学号: ";
+	cin>>p->studentNumber;
+	cout<<"请输入学生专业: ";
+	cin>>p->major;
+	s->next=p;
+	s=s->next;
+	i++;
+}
+//修改
+void Student::alter()
+{
+	Student *p;
+	p=head;
+	p=p->next;
+	cout<<"请输入需要修改学生的学号： ";
+	string num;
+	int j;
+	cin>>num;
+	for(j=0;j<i;j++)
+	{
+		if(num==p->studentNumber)
+		{
+			cout<<"姓名: "<<p->name<<endl;
+			cout<<"学号: "<<p->studentNumber<<endl;
+			cout<<"专业: "<<p->major<<endl;
+			break;
+		}
+		else
+			p=p->next;	
+	}
+	if(j==i)
+			cout<<"该学号不存在，请重新输入"<<endl;
+	else
+	{
+		cout<<"请输入需要修改的信息(1.姓名|2.专业): ";
+		int command;
+		cin>>command;
+		if(command==1)
+		{
+			cout<<"请输入修改后的姓名: ";
+			cin>>num;
+			p->name=num;
+		}
+		else if(command==2)
+		{
+			cout<<"请输入修改后的专业: ";
+			cin>>num;
+			p->major=num;
+		}
+		else
+			cout<<"输入错误，请重新输入"<<endl;
+	}
+}//修改
+//查找
+void Student::find()
+{
+	Student *p;
+	p=head;
+	p=p->next;
+	cout<<"请输入查找学生的学号: ";
+	string num;
+	cin>>num;
+	int j;
+	for(j=0;j<i;j++)
+	{
+		if(p->studentNumber==num)
+		{
+			cout<<"姓名: "<<p->name<<endl;
+			cout<<"学号: "<<p->studentNumber<<endl;
+			cout<<"专业: "<<p->major<<endl;
+			break;
+		}
+		else
+			p=p->next;
+	}
+	if(j==i)
+		cout<<"没有该学生"<<endl;
+}//查找
+//删除
+void Student::remove()
+{
+	Student *p,*q;
+	p=head;
+	q=p;
+	p=p->next;
+	cout<<"请输入需要删除的学生的学号: ";
+	string num;
+	cin>>num;
+	int j;
+	for(j=0;j<i;j++)
+	{
+		if(p->studentNumber==num)
+		{
+			q->next=p->next;
+			delete p;
+			cout<<"已删除"<<endl;
+			i--;
+			break;
+		}
+		else
+		{
+			q=p;
+			p=p->next;
+		}
+	}
+}//删除
+//查看全部
+void Student::findAll()
+{
+	Student *p;
+	p=head;
+	p=p->next;
+	int j=0;
+	for(j=0;j<i;j++)
+	{
+		cout<<j+1<<"."<<endl;
+		cout<<"姓名: "<<p->name<<endl;
+		cout<<"学号: "<<p->studentNumber<<endl;
+		cout<<"专业: "<<p->major<<endl;
+		p=p->next;
+	}
+}
+//读入文件
+void Student::read_out()
+{
+	Student *p;
+	p=head;
+	p=p->next;
+	ofstream outfile;
+	outfile.open("student.txt",ios::trunc);
+	for(int j=0;j<i;j++)
+	{
+		outfile<<p->name<<' '<<p->studentNumber<<'*'<<p->major<<'\t';
+		p=p->next;
+	}
+	outfile.close();
+	return;
+}
+//写入文件
+void Student::read_in()
+{
+	s=new Student;
+	head=s;
+	Student *p;
+	p=new Student;
+	int j,k=0;
+	char a[1000];
+	char x[100];
+	ofstream outfile;
+	outfile.open("student.txt",ios::app);
+	outfile.close();
+	ifstream infile;
+	infile.open("student.txt",ios::in);
+	while(!infile.eof())
+	{
+		infile.getline(a,1000);
+		for(j=0;j<strlen(a);j++)
+		{
+			x[k++]=a[j];
+			if(a[j]==' ')
+			{
+				x[k-1]='\0';
+				p->name=x;
+				k=0;
+			}
+			if(a[j]=='*')
+			{
+				x[k-1]='\0';
+				p->studentNumber=x;
+				k=0;
+			}
+			if(a[j]=='\t')
+			{
+				x[k-1]='\0';
+				p->major=x;
+				k=0;
+				i++;
+				s->next=p;
+				p=new Student;
+				s=s->next;
+			}
+		}
+		delete p;
+		infile.close();
+	}
+}
+int main()
+{
+	Student all;
+	int command;
+	all.builds();
+	all.read_in();
+	all.mainInterface();
+	while(cin>>command)
+	{
+		if(command==0)
+		{
+			all.read_out();
+			cout<<"程序已退出"<<endl;
+			break;
+			system("pause");
+		}
+		if(command==1)
+		{
+			all.build();
+			system("pause");
+			system("cls");
+			all.mainInterface();
+		}
+		else if(command==2)
+		{
+			all.alter();
+			system("pause");
+			system("cls");
+			all.mainInterface();
+		}
+		else if(command==3)
+		{
+			all.find();
+			system("pause");
+			system("cls");
+			all.mainInterface();
+		}
+		else if(command==4)
+		{
+			all.remove();
+			system("pause");
+			system("cls");
+			all.mainInterface();
+		}
+		else if(command==5)
+		{
+			all.findAll();
+			system("pause");
+			system("cls");
+			all.mainInterface();
+		}
+	}
+}
